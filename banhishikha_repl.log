@@ -1,0 +1,35 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20230809124715
+Username: PERSISTENT\banhishikha_mitra
+RunAs User: PERSISTENT\banhishikha_mitra
+Configuration Name: 
+Machine: PSL-7FLCDN3 (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 27248
+PSVersion: 5.1.22621.1778
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.1778
+BuildVersion: 10.0.22621.1778
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is banhishikha_repl.log
+PS C:\Users\banhishikha_mitra> python
+Python 3.10.5 (tags/v3.10.5:f377153, Jun  6 2022, 16:14:13) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("testing")
+testing
+>>> https://github.com/sureshnanjan/python_robot_training.git
+  File "<stdin>", line 1
+    https://github.com/sureshnanjan/python_robot_training.git
+          ^^
+SyntaxError: invalid syntax
+>>> ^Z
+PS C:\Users\banhishikha_mitra> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20230809125022
+**********************

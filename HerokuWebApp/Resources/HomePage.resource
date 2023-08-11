@@ -10,7 +10,7 @@ ${subheadingText}   Available Examples
 
 *** Keywords ***
 Check Heading
-    # The Emement Has Text Welcome to the-internet
+    # The Element Has Text Welcome to the-internet
     Element Should Contain  ${headinglocator}   ${headingText}
 
 Check SubHeading

@@ -1,0 +1,16 @@
+{
+    "firstName": "Python",
+    "lastName": "User",
+    "hobbies": ["running", "sky diving", "singing"],
+    "age": 35,
+    "children": [
+        {
+            "firstName": "Json",
+            "age": 6
+        },
+        {
+            "firstName": "Yaml",
+            "age": 8
+        }
+    ]
+}

@@ -18,7 +18,9 @@ Check SubHeading
     Element Should Contain  ${subheadinglocator}   ${subheadingText}
 
 Go To Example
-    [Arguments] ${examplename}
+    [Arguments]     ${examplename}
+    Click Link      ${examplename}
+
 
 Get Available Example Count
     no operation

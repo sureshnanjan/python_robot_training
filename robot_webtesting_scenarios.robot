@@ -21,6 +21,7 @@ Bad Test Case
 
 *** Keywords ***
 Open Heroku App
+    # remote_url=http://127.0.0.1:4444/wd/hub
     Open Browser    ${LOGIN URL}    ${BROWSER}
     Title Should Be    The Internet
 

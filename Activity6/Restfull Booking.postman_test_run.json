@@ -1,0 +1,504 @@
+{
+	"id": "d458533f-2157-47e3-8f86-7c0686683d8d",
+	"name": "Restfull Booking",
+	"timestamp": "2023-08-24T05:14:05.514Z",
+	"collection_id": "22941821-69391ef8-c1c4-4622-9d12-431f47927bc0",
+	"folder_id": 0,
+	"environment_id": "22941821-0656485d-ae2f-4fe0-b785-b2a9a79930c8",
+	"totalPass": 35,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-08-24T05:13:56.151Z",
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "e1a45852-0c0e-4163-9fdb-828e769c6c09",
+			"name": "Get Bookings Ids",
+			"url": "https://restful-booker.herokuapp.com/booking",
+			"time": 621,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response is an array with at least one element": true,
+				"Each element in the array has the required field - bookingid": true,
+				"bookingid is a non-negative integer": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array with at least one element": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each element in the array has the required field - bookingid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"bookingid is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				621
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response is an array with at least one element": true,
+					"Each element in the array has the required field - bookingid": true,
+					"bookingid is a non-negative integer": true
+				}
+			]
+		},
+		{
+			"id": "9693ca5d-35d7-46ab-8fc6-001157423eaa",
+			"name": "Get Single Booking",
+			"url": "https://restful-booker.herokuapp.com/booking/1",
+			"time": 1029,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Firstname and lastname should be non-empty strings": true,
+				"Total price is a non-negative number": true,
+				"Depositpaid is a boolean value": true,
+				"Bookingdates object is present in the response": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Firstname and lastname should be non-empty strings": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Total price is a non-negative number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Depositpaid is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Bookingdates object is present in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1029
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Firstname and lastname should be non-empty strings": true,
+					"Total price is a non-negative number": true,
+					"Depositpaid is a boolean value": true,
+					"Bookingdates object is present in the response": true
+				}
+			]
+		},
+		{
+			"id": "41b10be8-d345-48f1-a144-ceb1977bc06f",
+			"name": "Get Single Booking with wrong id",
+			"url": "https://restful-booker.herokuapp.com/booking/000",
+			"time": 270,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				270
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "96de2b23-5850-46db-ab7f-07fcf8224e7b",
+			"name": "CreateBooking",
+			"url": "https://restful-booker.herokuapp.com/booking",
+			"time": 376,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"bookingid is a non-negative integer": true,
+				"Firstname and lastname are non-empty strings": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"bookingid is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Firstname and lastname are non-empty strings": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				376
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"bookingid is a non-negative integer": true,
+					"Firstname and lastname are non-empty strings": true
+				}
+			]
+		},
+		{
+			"id": "153a4f07-4baf-4dd0-b8ee-77015ee0a07d",
+			"name": "Get Booking after create booking",
+			"url": "https://restful-booker.herokuapp.com/booking/1898",
+			"time": 353,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Firstname and Lastname are non-empty strings": true,
+				"Total price is a non-negative integer": true,
+				"Depositpaid is a boolean": true,
+				"Booking dates should contain checkin and checkout fields": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Firstname and Lastname are non-empty strings": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Total price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Depositpaid is a boolean": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Booking dates should contain checkin and checkout fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				353
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Firstname and Lastname are non-empty strings": true,
+					"Total price is a non-negative integer": true,
+					"Depositpaid is a boolean": true,
+					"Booking dates should contain checkin and checkout fields": true
+				}
+			]
+		},
+		{
+			"id": "ea07779f-b466-45f6-824d-fbd17a87631c",
+			"name": "restful token 1",
+			"url": "https://restful-booker.herokuapp.com/auth",
+			"time": 589,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required field - token": true,
+				"Token is a non-empty string": true,
+				"Response time is less than 500ms": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required field - token": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Token is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				589
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required field - token": true,
+					"Token is a non-empty string": true,
+					"Response time is less than 500ms": false
+				}
+			]
+		},
+		{
+			"id": "9280c316-26d8-4023-becb-f2276a86b316",
+			"name": "update booking",
+			"url": "https://restful-booker.herokuapp.com/booking/1898",
+			"time": 362,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Firstname is a non-empty string": true,
+				"Lastname is a non-empty string": true,
+				"Total price is a non-negative integer": true,
+				"Depositpaid is a boolean value": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Firstname is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Lastname is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Total price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Depositpaid is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				362
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Firstname is a non-empty string": true,
+					"Lastname is a non-empty string": true,
+					"Total price is a non-negative integer": true,
+					"Depositpaid is a boolean value": true
+				}
+			]
+		},
+		{
+			"id": "be34a53c-9316-49c7-b4e1-74690924cc76",
+			"name": "update booking without token",
+			"url": "https://restful-booker.herokuapp.com/booking/1",
+			"time": 1161,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1161
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c2cc0464-c884-40a4-bcc4-afdc02043bac",
+			"name": "partial update booking",
+			"url": "https://restful-booker.herokuapp.com/booking/1",
+			"time": 864,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Firstname and lastname are non-empty strings": true,
+				"Total price is a positive number": true,
+				"Depositpaid is a boolean value": true,
+				"Bookingdates object contains checkin and checkout fields": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Firstname and lastname are non-empty strings": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Total price is a positive number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Depositpaid is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Bookingdates object contains checkin and checkout fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				864
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Firstname and lastname are non-empty strings": true,
+					"Total price is a positive number": true,
+					"Depositpaid is a boolean value": true,
+					"Bookingdates object contains checkin and checkout fields": true
+				}
+			]
+		},
+		{
+			"id": "6f518e88-14bb-4a01-a873-f24fcd2f8047",
+			"name": "partial update booking without token",
+			"url": "https://restful-booker.herokuapp.com/booking/1",
+			"time": 1050,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Firstname is a non-empty string": true,
+				"Lastname is a non-empty string": true,
+				"totalprice is a non-negative integer": true,
+				"Depositpaid is a boolean value": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Firstname is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Lastname is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"totalprice is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Depositpaid is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1050
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Firstname is a non-empty string": true,
+					"Lastname is a non-empty string": true,
+					"totalprice is a non-negative integer": true,
+					"Depositpaid is a boolean value": true
+				}
+			]
+		},
+		{
+			"id": "a50107be-4f2d-4375-a6df-cf3d644e689f",
+			"name": "Delete Booking",
+			"url": "https://restful-booker.herokuapp.com/booking/1898",
+			"time": 1179,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1179
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 7854,
+	"collection": {
+		"requests": [
+			{
+				"id": "e1a45852-0c0e-4163-9fdb-828e769c6c09",
+				"method": "GET"
+			},
+			{
+				"id": "9693ca5d-35d7-46ab-8fc6-001157423eaa",
+				"method": "GET"
+			},
+			{
+				"id": "41b10be8-d345-48f1-a144-ceb1977bc06f",
+				"method": "GET"
+			},
+			{
+				"id": "96de2b23-5850-46db-ab7f-07fcf8224e7b",
+				"method": "POST"
+			},
+			{
+				"id": "153a4f07-4baf-4dd0-b8ee-77015ee0a07d",
+				"method": "GET"
+			},
+			{
+				"id": "ea07779f-b466-45f6-824d-fbd17a87631c",
+				"method": "POST"
+			},
+			{
+				"id": "9280c316-26d8-4023-becb-f2276a86b316",
+				"method": "PUT"
+			},
+			{
+				"id": "be34a53c-9316-49c7-b4e1-74690924cc76",
+				"method": "PUT"
+			},
+			{
+				"id": "c2cc0464-c884-40a4-bcc4-afdc02043bac",
+				"method": "PATCH"
+			},
+			{
+				"id": "6f518e88-14bb-4a01-a873-f24fcd2f8047",
+				"method": "PATCH"
+			},
+			{
+				"id": "a50107be-4f2d-4375-a6df-cf3d644e689f",
+				"method": "DELETE"
+			}
+		]
+	}
+}

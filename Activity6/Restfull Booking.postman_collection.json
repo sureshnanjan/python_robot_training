@@ -4,48 +4,51 @@
 		"name": "Restfull Booking",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22941821",
-		"_collection_link": "https://www.postman.com/warped-equinox-166878/workspace/rsa-maps/collection/22941821-69391ef8-c1c4-4622-9d12-431f47927bc0?action=share&creator=22941821&source=collection_link"
+		"_collection_link": "https://www.postman.com/warped-equinox-166878/workspace/rsa-maps/collection/22941821-69391ef8-c1c4-4622-9d12-431f47927bc0?action=share&source=collection_link&creator=22941821"
 	},
 	"item": [
 		{
 			"name": "Booking",
 			"item": [
 				{
-					"name": "TOKEN",
-					"item": [
-						{
-							"name": "restful token",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password123\"\r\n}"
-								},
-								"url": {
-									"raw": "{{Restfull_Booking}}/auth",
-									"host": [
-										"{{Restfull_Booking}}"
-									],
-									"path": [
-										"auth"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
 					"name": "Test Cases",
 					"item": [
 						{
 							"name": "Get Bookings Ids",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('Response status code is 200', function () {",
+											"    pm.expect(pm.response.code).to.equal(200);",
+											"})",
+											"",
+											"pm.test('Response is an array with at least one element', function () {",
+											"    const responseData = pm.response.json();",
+											"    pm.expect(responseData).to.be.an('array').and.to.have.lengthOf.at.least(1);",
+											"})",
+											"",
+											"pm.test('Each element in the array has the required field - bookingid', function () {",
+											"    const responseData = pm.response.json();",
+											"    pm.expect(responseData).to.be.an('array').that.is.not.empty;",
+											"    responseData.forEach(function (element) {",
+											"        pm.expect(element.bookingid).to.exist;",
+											"    });",
+											"})",
+											"",
+											"pm.test('bookingid is a non-negative integer', function () {",
+											"    const responseData = pm.response.json();",
+											"    pm.expect(responseData).to.be.an('array');",
+											"    responseData.forEach(function (booking) {",
+											"        pm.expect(booking.bookingid).to.be.a('number').and.to.be.at.least(0);",
+											"    });",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -63,6 +66,50 @@
 						},
 						{
 							"name": "Get Single Booking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Firstname and lastname should be non-empty strings\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData).to.be.an('object');",
+											"  pm.expect(responseData.firstname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Firstname should not be empty\");",
+											"  pm.expect(responseData.lastname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Lastname should not be empty\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Total price is a non-negative number\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData.totalprice).to.be.a('number').and.to.be.at.least(0, \"Total price should be a non-negative number\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Depositpaid is a boolean value\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData).to.be.an('object');",
+											"  pm.expect(responseData.depositpaid).to.be.a('boolean');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Bookingdates object is present in the response\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.bookingdates).to.exist;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -99,6 +146,35 @@
 						},
 						{
 							"name": "CreateBooking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseJson = pm.response.json();\r",
+											"const bookingid = responseJson.bookingid\r",
+											"\r",
+											"pm.collectionVariables.set('bookingid', bookingid); ",
+											"pm.test('Response status code is 200', function () {",
+											"    pm.expect(pm.response.code).to.equal(200);",
+											"})",
+											"",
+											"pm.test('bookingid is a non-negative integer', function () {",
+											"    const responseData = pm.response.json();",
+											"    pm.expect(responseData.bookingid).to.be.a('number');",
+											"    pm.expect(responseData.bookingid).to.be.at.least(0);",
+											"})",
+											"",
+											"pm.test('Firstname and lastname are non-empty strings', function () {",
+											"    const responseData = pm.response.json();",
+											"    pm.expect(responseData.booking.firstname).to.be.a('string').and.to.have.lengthOf.at.least(1, 'Firstname should not be empty');",
+											"    pm.expect(responseData.booking.lastname).to.be.a('string').and.to.have.lengthOf.at.least(1, 'Lastname should not be empty');",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -125,17 +201,118 @@
 						},
 						{
 							"name": "Get Booking after create booking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"  pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Firstname and Lastname are non-empty strings\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData).to.be.an('object');",
+											"  pm.expect(responseData.firstname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+											"  pm.expect(responseData.lastname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Total price is a non-negative integer\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.totalprice).to.be.a('number');",
+											"    pm.expect(responseData.totalprice).to.be.at.least(0, \"Total price should be a non-negative integer\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Depositpaid is a boolean\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData.depositpaid).to.be.a('boolean');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Booking dates should contain checkin and checkout fields\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData.bookingdates).to.exist.and.to.have.all.keys(\"checkin\", \"checkout\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{Restfull_Booking}}/booking/3896",
+									"raw": "{{Restfull_Booking}}/booking/{{bookingid}}",
 									"host": [
 										"{{Restfull_Booking}}"
 									],
 									"path": [
 										"booking",
-										"3896"
+										"{{bookingid}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "restful token 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseJson = pm.response.json();\r",
+											"const token = responseJson.token\r",
+											"\r",
+											"pm.collectionVariables.set('token', token); ",
+											"pm.test('Response status code is 200', function () {",
+											"    pm.expect(pm.response.code).to.equal(200);",
+											"})",
+											"",
+											"pm.test('Response has the required field - token', function () {",
+											"    const responseData = pm.response.json();",
+											"    pm.expect(responseData.token).to.exist;",
+											"})",
+											"",
+											"pm.test('Token is a non-empty string', function () {",
+											"    const responseData = pm.response.json();",
+											"    pm.expect(responseData.token).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, 'Token should not be empty');",
+											"})",
+											"",
+											"pm.test('Response time is less than 500ms', function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password123\"\r\n}"
+								},
+								"url": {
+									"raw": "{{Restfull_Booking}}/auth",
+									"host": [
+										"{{Restfull_Booking}}"
+									],
+									"path": [
+										"auth"
 									]
 								}
 							},
@@ -143,6 +320,50 @@
 						},
 						{
 							"name": "update booking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Firstname is a non-empty string\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData.firstname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Lastname is a non-empty string\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData.lastname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Lastname should not be empty\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Total price is a non-negative integer\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.totalprice).to.be.a('number').and.to.satisfy((price) => {",
+											"        return price >= 0;",
+											"    });",
+											"});",
+											"",
+											"",
+											"pm.test(\"Depositpaid is a boolean value\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData).to.be.an('object');",
+											"  pm.expect(responseData.depositpaid).to.be.a('boolean');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -156,7 +377,7 @@
 									},
 									{
 										"key": "Cookie",
-										"value": "token=2c264e870b0eac9"
+										"value": "token={{token}}"
 									}
 								],
 								"body": {
@@ -164,13 +385,13 @@
 									"raw": "{\r\n    \"firstname\" : \"James\",\r\n    \"lastname\" : \"Brown\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}"
 								},
 								"url": {
-									"raw": "{{Restfull_Booking}}/booking/1",
+									"raw": "{{Restfull_Booking}}/booking/{{bookingid}}",
 									"host": [
 										"{{Restfull_Booking}}"
 									],
 									"path": [
 										"booking",
-										"1"
+										"{{bookingid}}"
 									]
 								}
 							},
@@ -213,6 +434,51 @@
 						},
 						{
 							"name": "partial update booking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Firstname and lastname are non-empty strings\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.firstname).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"Firstname should not be empty\");",
+											"    pm.expect(responseData.lastname).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"Lastname should not be empty\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Total price is a positive number\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData.totalprice).to.be.a('number').and.to.be.above(0);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Depositpaid is a boolean value\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData.depositpaid).to.be.a('boolean');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Bookingdates object contains checkin and checkout fields\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.bookingdates).to.exist;",
+											"    pm.expect(responseData.bookingdates).to.have.property('checkin');",
+											"    pm.expect(responseData.bookingdates).to.have.property('checkout');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "PATCH",
 								"header": [
@@ -226,7 +492,7 @@
 									},
 									{
 										"key": "Cookie",
-										"value": "token=8bab2c131a20884"
+										"value": "token={{token}}"
 									}
 								],
 								"body": {
@@ -248,6 +514,48 @@
 						},
 						{
 							"name": "partial update booking without token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Firstname is a non-empty string\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData.firstname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Firstname should not be empty\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Lastname is a non-empty string\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.lastname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Lastname should not be empty\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"totalprice is a non-negative integer\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.totalprice).to.be.a('number');",
+											"    pm.expect(responseData.totalprice).to.be.at.least(0);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Depositpaid is a boolean value\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.depositpaid).to.be.a(\"boolean\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "PATCH",
 								"header": [
@@ -261,7 +569,7 @@
 									},
 									{
 										"key": "Cookie",
-										"value": "token="
+										"value": "token={{token}}"
 									}
 								],
 								"body": {
@@ -292,16 +600,17 @@
 									},
 									{
 										"key": "Cookie",
-										"value": "token=8bab2c131a20884"
+										"value": "token={{token}}"
 									}
 								],
 								"url": {
-									"raw": "{{Restfull_Booking}}/1",
+									"raw": "{{Restfull_Booking}}/booking/{{bookingid}}",
 									"host": [
 										"{{Restfull_Booking}}"
 									],
 									"path": [
-										"1"
+										"booking",
+										"{{bookingid}}"
 									]
 								}
 							},
@@ -310,6 +619,16 @@
 					]
 				}
 			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "bookingid",
+			"value": ""
 		}
 	]
 }

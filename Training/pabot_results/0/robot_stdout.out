@@ -1,0 +1,24 @@
+==============================================================================
+Training                                                                      
+==============================================================================
+Training.Restful Booker :: Suite description                                  
+==============================================================================
+Get bookings from restful booker                                        
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Training\python_robot_training\Training\restful_booker.robot:10
+    T:  Get bookings from restful booker    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Training\python_robot_training\Training\restful_booker.robot:14
+      Status Should Be    200
+______________________________________________________________________________
+| FAIL |
+Keyword 'RequestsLibrary.Status Should Be' expected 2 to 3 arguments, got 1.
+------------------------------------------------------------------------------
+Training.Restful Booker :: Suite description                          | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Training                                                              | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\chetankumar_kotecha\PycharmProjects\pythonProject\pythonProject\Training\pabot_results\0\output.xml

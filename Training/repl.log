@@ -1,0 +1,447 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20230824183800
+Username: PERSISTENT\chetankumar_kotecha
+RunAs User: PERSISTENT\chetankumar_kotecha
+Configuration Name: 
+Machine: HJNZL000644 (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10104
+PSVersion: 5.1.22621.1778
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.1778
+BuildVersion: 10.0.22621.1778
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is repl.log
+PS C:\Users\chetankumar_kotecha> python -v
+import _frozen_importlib # frozen
+import _imp # builtin
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import '_warnings' # <class '_frozen_importlib.BuiltinImporter'>
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+import '_frozen_importlib_external' # <class '_frozen_importlib.FrozenImporter'>
+import 'nt' # <class '_frozen_importlib.BuiltinImporter'>
+import '_io' # <class '_frozen_importlib.BuiltinImporter'>
+import 'marshal' # <class '_frozen_importlib.BuiltinImporter'>
+import 'winreg' # <class '_frozen_importlib.BuiltinImporter'>
+# installing zipimport hook
+import 'time' # <class '_frozen_importlib.BuiltinImporter'>
+import 'zipimport' # <class '_frozen_importlib.FrozenImporter'>
+# installed zipimport hook
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\__pycache__\__init__.cpython-39.pyc
+matches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\__init__.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\encodings\\__pycach
+e__\\__init__.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\codecs.cpython-39.pyc matches C:\U
+sers\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\codecs.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\codecs
+.cpython-39.pyc'
+import '_codecs' # <class '_frozen_importlib.BuiltinImporter'>
+import 'codecs' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CB759D0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\__pycache__\aliases.cpython-39.pyc m
+atches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\aliases.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\encodings\\__pycach
+e__\\aliases.cpython-39.pyc'
+import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CCE4F70>
+import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CB757F0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\__pycache__\utf_8.cpython-39.pyc mat
+ches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\utf_8.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\encodings\\__pycach
+e__\\utf_8.cpython-39.pyc'
+import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CB75850>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\__pycache__\cp1252.cpython-39.pyc ma
+tches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\cp1252.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\encodings\\__pycach
+e__\\cp1252.cpython-39.pyc'
+import 'encodings.cp1252' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CCE4F40>
+import '_signal' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\__pycache__\latin_1.cpython-39.pyc m
+atches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\encodings\latin_1.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\encodings\\__pycach
+e__\\latin_1.cpython-39.pyc'
+import 'encodings.latin_1' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CCFC400>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\io.cpython-39.pyc matches C:\Users
+\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\io.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\io.cpy
+thon-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\abc.cpython-39.pyc matches C:\User
+s\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\abc.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\abc.cp
+ython-39.pyc'
+import '_abc' # <class '_frozen_importlib.BuiltinImporter'>
+import 'abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CCFC880>
+import 'io' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CCFC5B0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\site.cpython-39.pyc matches C:\Use
+rs\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\site.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\site.c
+python-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\os.cpython-39.pyc matches C:\Users
+\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\os.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\os.cpy
+thon-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\stat.cpython-39.pyc matches C:\Use
+rs\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\stat.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\stat.c
+python-39.pyc'
+import '_stat' # <class '_frozen_importlib.BuiltinImporter'>
+import 'stat' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CD29160>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\_collections_abc.cpython-39.pyc ma
+tches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\_collections_abc.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\_colle
+ctions_abc.cpython-39.pyc'
+import '_collections_abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CD291F0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\ntpath.cpython-39.pyc matches C:\U
+sers\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\ntpath.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\ntpath
+.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\genericpath.cpython-39.pyc matches
+ C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\genericpath.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\generi
+cpath.cpython-39.pyc'
+import 'genericpath' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CE51790>
+import 'ntpath' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CD29AF0>
+import 'os' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CD05850>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\_sitebuiltins.cpython-39.pyc match
+es C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\_siteb
+uiltins.cpython-39.pyc'
+import '_sitebuiltins' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CD20520>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\_bootlocale.cpython-39.pyc matches
+ C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\_bootlocale.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\_bootl
+ocale.cpython-39.pyc'
+import '_locale' # <class '_frozen_importlib.BuiltinImporter'>
+import '_bootlocale' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CE51B50>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\types.cpython-39.pyc matches C:\Us
+ers\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\types.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\types.
+cpython-39.pyc'
+import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CE668E0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\importlib\__pycache__\__init__.cpython-39.pyc
+matches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\importlib\\__pycach
+e__\\__init__.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\warnings.cpython-39.pyc matches C:
+\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\warnings.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\warnin
+gs.cpython-39.pyc'
+import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CE65A90>
+import 'importlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CE660D0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\importlib\__pycache__\util.cpython-39.pyc matc
+hes C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\importlib\util.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\importlib\\__pycach
+e__\\util.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\importlib\__pycache__\abc.cpython-39.pyc match
+es C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\importlib\abc.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\importlib\\__pycach
+e__\\abc.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\importlib\__pycache__\machinery.cpython-39.pyc
+ matches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\importlib\machinery.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\importlib\\__pycach
+e__\\machinery.cpython-39.pyc'
+import 'importlib.machinery' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CE85490>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\typing.cpython-39.pyc matches C:\U
+sers\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\typing.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\typing
+.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\collections\__pycache__\__init__.cpython-39.py
+c matches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\collections\__init__.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\collections\\__pyca
+che__\\__init__.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\heapq.cpython-39.pyc matches C:\Us
+ers\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\heapq.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\heapq.
+cpython-39.pyc'
+import '_heapq' # <class '_frozen_importlib.BuiltinImporter'>
+import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CECB3A0>
+import 'itertools' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\keyword.cpython-39.pyc matches C:\
+Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\keyword.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\keywor
+d.cpython-39.pyc'
+import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CECB910>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\operator.cpython-39.pyc matches C:
+\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\operator.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\operat
+or.cpython-39.pyc'
+import '_operator' # <class '_frozen_importlib.BuiltinImporter'>
+import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CECB9D0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\reprlib.cpython-39.pyc matches C:\
+Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\reprlib.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\reprli
+b.cpython-39.pyc'
+import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CECBA90>
+import '_collections' # <class '_frozen_importlib.BuiltinImporter'>
+import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CEA9820>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\collections\__pycache__\abc.cpython-39.pyc mat
+ches C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\collections\abc.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\collections\\__pyca
+che__\\abc.cpython-39.pyc'
+import 'collections.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CEA9BB0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\contextlib.cpython-39.pyc matches
+C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\contextlib.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\contex
+tlib.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\functools.cpython-39.pyc matches C
+:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\functools.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\functo
+ols.cpython-39.pyc'
+import '_functools' # <class '_frozen_importlib.BuiltinImporter'>
+import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CEDF430>
+import 'contextlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CEA9DC0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\re.cpython-39.pyc matches C:\Users
+\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\re.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\re.cpy
+thon-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\enum.cpython-39.pyc matches C:\Use
+rs\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\enum.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\enum.c
+python-39.pyc'
+import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CF116A0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\sre_compile.cpython-39.pyc matches
+ C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\sre_compile.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\sre_co
+mpile.cpython-39.pyc'
+import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\sre_parse.cpython-39.pyc matches C
+:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\sre_parse.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\sre_pa
+rse.cpython-39.pyc'
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\sre_constants.cpython-39.pyc match
+es C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\sre_constants.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\sre_co
+nstants.cpython-39.pyc'
+import 'sre_constants' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CF29EE0>
+import 'sre_parse' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CF294F0>
+import 'sre_compile' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CF19BE0>
+# C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\__pycache__\copyreg.cpython-39.pyc matches C:\
+Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\copyreg.py
+# code object from 'C:\\Users\\chetankumar_kotecha\\AppData\\Local\\Programs\\Python\\Python39\\lib\\__pycache__\\copyre
+g.cpython-39.pyc'
+import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CF40670>
+import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CECB1C0>
+import 'typing' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CE85760>
+import 'importlib.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CD20280>
+import 'importlib.util' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CE65EE0>
+# possible namespace for C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib\site-packages\zope
+import 'site' # <_frozen_importlib_external.SourceFileLoader object at 0x000002787CCFC910>
+Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+import 'atexit' # <class '_frozen_importlib.BuiltinImporter'>
+>>> print 'chetan'
+  File "<stdin>", line 1
+    print 'chetan'
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print('chetan')?
+>>> print ('chetan')
+chetan
+>>> def fun():
+... a=5+2
+  File "<stdin>", line 2
+    a=5+2
+    ^
+IndentationError: expected an indented block
+>>>     a=5+2
+  File "<stdin>", line 1
+    a=5+2
+IndentationError: unexpected indent
+>>> def func():
+...    a=5+2
+...    print(a)
+... ^Z
+
+>>> print(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+>>> func()
+7
+>>> ^Z
+
+# clear builtins._
+# clear sys.path
+# clear sys.argv
+# clear sys.ps1
+# clear sys.ps2
+# clear sys.last_type
+# clear sys.last_value
+# clear sys.last_traceback
+# clear sys.path_hooks
+# clear sys.path_importer_cache
+# clear sys.meta_path
+# clear sys.__interactivehook__
+# restore sys.stdin
+# restore sys.stdout
+# restore sys.stderr
+# cleanup[2] removing sys
+# cleanup[2] removing builtins
+# cleanup[2] removing _frozen_importlib
+# cleanup[2] removing _imp
+# cleanup[2] removing _thread
+# cleanup[2] removing _warnings
+# cleanup[2] removing _weakref
+# cleanup[2] removing _frozen_importlib_external
+# cleanup[2] removing nt
+# cleanup[2] removing _io
+# cleanup[2] removing marshal
+# cleanup[2] removing winreg
+# cleanup[2] removing time
+# cleanup[2] removing zipimport
+# destroy zipimport
+# cleanup[2] removing _codecs
+# cleanup[2] removing codecs
+# cleanup[2] removing encodings.aliases
+# cleanup[2] removing encodings
+# destroy encodings
+# cleanup[2] removing encodings.utf_8
+# cleanup[2] removing encodings.cp1252
+# cleanup[2] removing _signal
+# cleanup[2] removing encodings.latin_1
+# cleanup[2] removing _abc
+# cleanup[2] removing abc
+# cleanup[2] removing io
+# cleanup[2] removing __main__
+# destroy __main__
+# cleanup[2] removing _stat
+# cleanup[2] removing stat
+# cleanup[2] removing _collections_abc
+# cleanup[2] removing genericpath
+# cleanup[2] removing ntpath
+# cleanup[2] removing os.path
+# cleanup[2] removing os
+# cleanup[2] removing _sitebuiltins
+# cleanup[2] removing _locale
+# cleanup[2] removing _bootlocale
+# destroy _bootlocale
+# cleanup[2] removing types
+# cleanup[2] removing importlib._bootstrap
+# cleanup[2] removing importlib._bootstrap_external
+# cleanup[2] removing warnings
+# cleanup[2] removing importlib
+# destroy importlib
+# cleanup[2] removing importlib.machinery
+# cleanup[2] removing _heapq
+# cleanup[2] removing heapq
+# cleanup[2] removing itertools
+# cleanup[2] removing keyword
+# destroy keyword
+# cleanup[2] removing _operator
+# cleanup[2] removing operator
+# cleanup[2] removing reprlib
+# destroy reprlib
+# cleanup[2] removing _collections
+# cleanup[2] removing collections
+# cleanup[2] removing collections.abc
+# cleanup[2] removing _functools
+# cleanup[2] removing functools
+# cleanup[2] removing contextlib
+# cleanup[2] removing enum
+# cleanup[2] removing _sre
+# cleanup[2] removing sre_constants
+# destroy sre_constants
+# cleanup[2] removing sre_parse
+# cleanup[2] removing sre_compile
+# cleanup[2] removing copyreg
+# cleanup[2] removing re
+# cleanup[2] removing typing
+# destroy typing
+# cleanup[2] removing importlib.abc
+# cleanup[2] removing importlib.util
+# cleanup[2] removing zope
+# destroy zope
+# cleanup[2] removing site
+# destroy site
+# cleanup[2] removing atexit
+# destroy time
+# destroy _sitebuiltins
+# destroy io
+# destroy ntpath
+# destroy _stat
+# destroy genericpath
+# destroy os
+# destroy stat
+# destroy importlib.util
+# destroy importlib.abc
+# destroy importlib.machinery
+# destroy warnings
+# destroy collections
+# destroy contextlib
+# destroy operator
+# destroy re
+# destroy types
+# destroy heapq
+# destroy collections.abc
+# destroy _heapq
+# destroy itertools
+# destroy atexit
+# destroy _operator
+# destroy _collections
+# destroy abc
+# destroy _collections_abc
+# destroy _abc
+# destroy _functools
+# destroy enum
+# destroy sre_compile
+# destroy functools
+# destroy _locale
+# destroy copyreg
+# destroy sre_parse
+# cleanup[3] wiping _sre
+# cleanup[3] wiping importlib._bootstrap_external
+# cleanup[3] wiping importlib._bootstrap
+# destroy _frozen_importlib_external
+# cleanup[3] wiping encodings.latin_1
+# cleanup[3] wiping _signal
+# cleanup[3] wiping encodings.cp1252
+# cleanup[3] wiping encodings.utf_8
+# cleanup[3] wiping encodings.aliases
+# cleanup[3] wiping codecs
+# cleanup[3] wiping _codecs
+# cleanup[3] wiping winreg
+# cleanup[3] wiping marshal
+# cleanup[3] wiping _io
+# cleanup[3] wiping nt
+# cleanup[3] wiping _weakref
+# destroy _weakref
+# cleanup[3] wiping _warnings
+# cleanup[3] wiping _thread
+# cleanup[3] wiping _imp
+# destroy _imp
+# cleanup[3] wiping _frozen_importlib
+# cleanup[3] wiping sys
+# cleanup[3] wiping builtins
+# destroy _sre
+# destroy _signal
+# destroy winreg
+# destroy marshal
+# destroy io
+# destroy _warnings
+# destroy _thread
+# destroy nt
+# destroy _frozen_importlib
+# clear sys.audit hooks
+PS C:\Users\chetankumar_kotecha> Stop transcript
+Stop : The term 'Stop' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Stop transcript
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (Stop:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Stop : The term 'Stop' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Stop transcript
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (Stop:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\chetankumar_kotecha> Stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20230824184038
+**********************

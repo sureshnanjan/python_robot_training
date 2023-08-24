@@ -1,0 +1,27 @@
+==============================================================================
+Training                                                                      
+==============================================================================
+Training.Training :: Suite description                                        
+==============================================================================
+Sample Test Case                                                      | PASS |
+------------------------------------------------------------------------------
+Failing Test Case                                                       
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Training\python_robot_training\Training\Training.robot:14
+    T:  Failing Test Case    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Training\python_robot_training\Training\Training.robot:19
+      Should Be Equal    ${var}    100
+      |  ${var} = 200 (str)
+______________________________________________________________________________
+| FAIL |
+200 != 100
+------------------------------------------------------------------------------
+Training.Training :: Suite description                                | FAIL |
+2 tests, 1 passed, 1 failed
+==============================================================================
+Training                                                              | FAIL |
+2 tests, 1 passed, 1 failed
+==============================================================================
+Output:  C:\Users\chetankumar_kotecha\PycharmProjects\pythonProject\pythonProject\Training\pabot_results\2\output.xml

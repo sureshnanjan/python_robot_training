@@ -1,0 +1,8 @@
+datasources:e6ae8d97f1d3cf3b958c3b22e2ad2a53a40c7473
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:d1b9c64f580a7efe1041cea8227be05d0ec91fb3
+--suite Training.Restful Booker
+--suite Training.TC2
+--suite Training.Training
+--suite Training.selenium TC1

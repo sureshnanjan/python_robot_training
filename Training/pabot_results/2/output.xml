@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.1 (Python 3.9.0 on win32)" generated="20230819 10:00:35.146" rpa="false" schemaversion="2">
+<suite id="s1" name="Training" source="D:\Training\python_robot_training\Training">
+<suite id="s1-s1" name="Training" source="D:\Training\python_robot_training\Training\Training.robot">
+<test id="s1-s1-t1" name="Sample Test Case">
+<kw name="Log" library="BuiltIn">
+<arg>"Test Case"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230819 10:00:35.539" level="INFO">"Test Case"</msg>
+<status status="PASS" starttime="20230819 10:00:35.539" endtime="20230819 10:00:35.540"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${var}</var>
+<arg>100</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230819 10:00:35.541" level="INFO">${var} = 100</msg>
+<status status="PASS" starttime="20230819 10:00:35.540" endtime="20230819 10:00:35.541"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230819 10:00:35.542" level="INFO">100</msg>
+<status status="PASS" starttime="20230819 10:00:35.541" endtime="20230819 10:00:35.542"/>
+</kw>
+<kw name="My Custom Keyword Demo">
+<kw name="Log" library="BuiltIn">
+<arg>"Custom Keyword"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230819 10:00:35.543" level="INFO">"Custom Keyword"</msg>
+<status status="PASS" starttime="20230819 10:00:35.543" endtime="20230819 10:00:35.543"/>
+</kw>
+<status status="PASS" starttime="20230819 10:00:35.542" endtime="20230819 10:00:35.544"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${var}</arg>
+<arg>100</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230819 10:00:35.544" endtime="20230819 10:00:35.544"/>
+</kw>
+<status status="PASS" starttime="20230819 10:00:35.538" endtime="20230819 10:00:35.545"/>
+</test>
+<test id="s1-s1-t2" name="Failing Test Case">
+<kw name="Log" library="BuiltIn">
+<arg>"Another Test Case"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230819 10:00:35.547" level="INFO">"Another Test Case"</msg>
+<status status="PASS" starttime="20230819 10:00:35.546" endtime="20230819 10:00:35.547"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${var}</var>
+<arg>200</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230819 10:00:35.548" level="INFO">${var} = 200</msg>
+<status status="PASS" starttime="20230819 10:00:35.547" endtime="20230819 10:00:35.548"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230819 10:00:35.549" level="INFO">200</msg>
+<status status="PASS" starttime="20230819 10:00:35.548" endtime="20230819 10:00:35.549"/>
+</kw>
+<kw name="My Custom Keyword Demo">
+<kw name="Log" library="BuiltIn">
+<arg>"Custom Keyword"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230819 10:00:35.550" level="INFO">"Custom Keyword"</msg>
+<status status="PASS" starttime="20230819 10:00:35.550" endtime="20230819 10:00:35.550"/>
+</kw>
+<status status="PASS" starttime="20230819 10:00:35.549" endtime="20230819 10:00:35.551"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${var}</arg>
+<arg>100</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230819 10:00:35.553" level="FAIL">200 != 100</msg>
+<status status="FAIL" starttime="20230819 10:00:35.551" endtime="20230819 10:00:35.553"/>
+</kw>
+<status status="FAIL" starttime="20230819 10:00:35.545" endtime="20230819 10:00:35.554">200 != 100</status>
+</test>
+<doc>Suite description</doc>
+<status status="FAIL" starttime="20230819 10:00:35.236" endtime="20230819 10:00:35.554"/>
+</suite>
+<status status="FAIL" starttime="20230819 10:00:35.177" endtime="20230819 10:00:35.557"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Training">Training</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s1" name="Training">Training.Training</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230819 10:00:35.536" level="ERROR">Error in file 'D:\Training\python_robot_training\Training\Training.robot' on line 4: Importing library 'Collection' failed: ModuleNotFoundError: No module named 'Collection'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\chetankumar_kotecha\PycharmProjects\pythonProject\venv\Scripts\robot.exe
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\site-packages
+  D:\PierianDx\Automation\API\lotus_api_automation_test\scripts\python_utilities.py
+  D:\PierianDx\Automation\API\lotus_api_automation_test\scripts
+  C:\Users\chetankumar_kotecha\PycharmProjects\pythonProject\pythonProject\Training
+  C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39
+  c:\users\chetankumar_kotecha\pycharmprojects\pythonproject\venv
+  c:\users\chetankumar_kotecha\pycharmprojects\pythonproject\venv\lib\site-packages</msg>
+</errors>
+</robot>

@@ -1,0 +1,22 @@
+[ ERROR ] Error in file 'D:\Training\python_robot_training\Training\restful_booker.robot' on line 4: Importing library 'Collection' failed: ModuleNotFoundError: No module named 'Collection'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\chetankumar_kotecha\PycharmProjects\pythonProject\venv\Scripts\robot.exe
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39
+  C:\Users\SYSTEM\AppData\Local\Programs\Python\Python39\site-packages
+  D:\PierianDx\Automation\API\lotus_api_automation_test\scripts\python_utilities.py
+  D:\PierianDx\Automation\API\lotus_api_automation_test\scripts
+  C:\Users\chetankumar_kotecha\PycharmProjects\pythonProject\pythonProject\Training
+  C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\chetankumar_kotecha\AppData\Local\Programs\Python\Python39
+  c:\users\chetankumar_kotecha\pycharmprojects\pythonproject\venv
+  c:\users\chetankumar_kotecha\pycharmprojects\pythonproject\venv\lib\site-packages
+c:\users\chetankumar_kotecha\pycharmprojects\pythonproject\venv\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(

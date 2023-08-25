@@ -14,3 +14,4 @@ def mean(data):
 
 
 average = mean(sample)
+print(average)

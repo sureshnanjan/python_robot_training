@@ -1,0 +1,11 @@
+ROBOTFRAMWORK SETUP:
+
+1) Install any IDE such as VScode,Pycharm,Eclipse.
+
+2) Install required Libraries: 
+      - robotframework
+      - JSONLibrary
+       -Requests
+       -Collections
+       -JSON
+       -OperatingSystem

@@ -1,0 +1,17 @@
+ROBOTFRAMWORK SETUP:
+
+1) Install any IDE VScode/Pycharm/Eclipse.
+
+2) Install required Libraries: 
+      - robotframework
+      - JSONLibrary
+       -Requests
+       -Collections
+       -JSON
+       -OperatingSystem
+3)Install required plugins
+       -IntelliBot
+	 -Robot framework language server
+	 -Robot framework file
+	 -Robot framework supprot
+	 -Run Robot framework TestCase

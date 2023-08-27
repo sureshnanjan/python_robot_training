@@ -1,0 +1,1818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230827 14:49:35.088" rpa="false" schemaversion="4">
+<suite id="s1" name="Booker" source="D:\SSP Project Training\Robot training\Robot Training Repo\python_robot_training\Activity11\RestfulActivity11\TestCases\Booker.robot">
+<test id="s1-t1" name="TC_01 GET BOOKING ID'S WITH VALID DATA" line="6">
+<kw name="GIVEN System set Header Details" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:35.358" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:35.358" endtime="20230827 14:49:35.358"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:35.373" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:35.358" endtime="20230827 14:49:35.373"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:35.358" endtime="20230827 14:49:35.373"/>
+</kw>
+<kw name="WHEN System sets GET Request for Booking Ids" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:35.373" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:35.373" endtime="20230827 14:49:35.373"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${booking_ids_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:35.373" level="INFO">${endpoint} = /booking</msg>
+<status status="PASS" starttime="20230827 14:49:35.373" endtime="20230827 14:49:35.373"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230827 14:49:37.292" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230827 14:49:37.292" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '56708', 'Etag': 'W/"dd84-CwjnHg9nDy7BHxm3g92kUhPbAUQ"', 'Date': 'Sun, 27 Aug 2023 09:19:36 GMT', 'Via': '1.1 vegur'} 
+ body=[{"bookingid":2661},{"bookingid":2770},{"bookingid":3469},{"bookingid":1467},{"bookingid":3718},{"bookingid":2292},{"bookingid":3031},{"bookingid":3395},{"bookingid":3345},{"bookingid":2384},{"bookingid":2253},{"bookingid":3818},{"bookingid":871},{"bookingid":627},{"bookingid":2506},{"bookingid":2520},{"bookingid":780},{"bookingid":860},{"bookingid":3294},{"bookingid":3400},{"bookingid":4012},{"bookingid":457},{"bookingid":188},{"bookingid":185},{"bookingid":3998},{"bookingid":4059},{"bookingid":3382},{"bookingid":2312},{"bookingid":3875},{"bookingid":1613},{"bookingid":466},{"bookingid":916},{"bookingid":1071},{"bookingid":1398},{"bookingid":2782},{"bookingid":1525},{"bookingid":4405},{"bookingid":1030},{"bookingid":1014},{"bookingid":4257},{"bookingid":1262},{"bookingid":9},{"bookingid":998},{"bookingid":1781},{"bookingid":85},{"bookingid":4274},{"bookingid":3208},{"bookingid":2396},{"bookingid":574},{"bookingid":1168},{"bookingid":2050},{"bookingid":2665},{"bookingid":3019},{"bookingid":2609},{"bookingid":2261},{"bookingid":3350},{"bookingid":4269},{"bookingid":2505},{"bookingid":2727},{"bookingid":2626},{"bookingid":3039},{"bookingid":582},{"bookingid":3465},{"bookingid":759},{"bookingid":2691},{"bookingid":442},{"bookingid":33},{"bookingid":906},{"bookingid":4121},{"bookingid":3988},{"bookingid":2627},{"bookingid":3147},{"bookingid":802},{"bookingid":4025},{"bookingid":224},{"bookingid":815},{"bookingid":1767},{"bookingid":1327},{"bookingid":1461},{"bookingid":2004},{"bookingid":3707},{"bookingid":1061},{"bookingid":1809},{"bookingid":2604},{"bookingid":3207},{"bookingid":2673},{"bookingid":66},{"bookingid":4210},{"bookingid":4207},{"bookingid":2436},{"bookingid":543},{"bookingid":1925},{"bookingid":962},{"bookingid":3043},{"bookingid":126},{"bookingid":2112},{"bookingid":1414},{"bookingid":4288},{"bookingid":3249},{"bookingid":993},{"bookingid":1815},{"bookingid":2562},{"bookingid":748},{"bookingid":1299},{"bookingid":4326},{"bookingid":3913},{"bookingid":672},{"bookingid":905},{"bookingid":2978},{"bookingid":3281},{"bookingid":2331},{"bookingid":3915},{"bookingid":251},{"bookingid":3982},{"bookingid":4273},{"bookingid":2053},{"bookingid":3798},{"bookingid":1109},{"bookingid":1873},{"bookingid":3543},{"bookingid":481},{"bookingid":1245},{"bookingid":4294},{"bookingid":3851},{"bookingid":2250},{"bookingid":3518},{"bookingid":3666},{"bookingid":135},{"bookingid":2054},{"bookingid":3186},{"bookingid":3292},{"bookingid":2781},{"bookingid":3173},{"bookingid":4135},{"bookingid":2096},{"bookingid":2463},{"bookingid":2521},{"bookingid":2310},{"bookingid":2067},{"bookingid":3052},{"bookingid":4007},{"bookingid":4169},{"bookingid":2544},{"bookingid":1060},{"bookingid":3679},{"bookingid":81},{"bookingid":4096},{"bookingid":2495},{"bookingid":4233},{"bookingid":2321},{"bookingid":3649},{"bookingid":3521},{"bookingid":1659},{"bookingid":782},{"bookingid":3896},{"bookingid":3872},{"bookingid":558},{"bookingid":120},{"bookingid":645},{"bookingid":2078},{"bookingid":735},{"bookingid":1986},{"bookingid":1166},{"bookingid":3348},{"bookingid":3054},{"bookingid":934},{"bookingid":3540},{"bookingid":794},{"bookingid":2699},{"bookingid":3614},{"bookingid":1884},{"bookingid":3857},{"bookingid":1027},{"bookingid":3947},{"bookingid":1828},{"bookingid":2921},{"bookingid":3676},{"bookingid":4389},{"bookingid":3770},{"bookingid":1581},{"bookingid":3296},{"bookingid":1892},{"bookingid":710},{"bookingid":3107},{"bookingid":2885},{"bookingid":3682},{"bookingid":1097},{"bookingid":2768},{"bookingid":1872},{"bookingid":3420},{"bookingid":1295},{"bookingid":2296},{"bookingid":400},{"bookingid":3905},{"bookingid":300},{"bookingid":2264},{"bookingid":3070},{"bookingid":624},{"bookingid":3271},{"bookingid":621},{"bookingid":3504},{"bookingid":2117},{"bookingid":549},{"bookingid":2625},{"bookingid":3919},{"bookingid":1133},{"bookingid":2656},{"bookingid":1536},{"bookingid":3602},{"bookingid":3267},{"bookingid":1276},{"bookingid":2179},{"bookingid":2533},{"bookingid":3003},{"bookingid":3923},{"bookingid":1626},{"bookingid":2957},{"bookingid":3100},{"bookingid":1852},{"bookingid":2984},{"bookingid":3708},{"bookingid":3815},{"bookingid":3516},{"bookingid":2492},{"bookingid":1365},{"bookingid":2424},{"bookingid":3067},{"bookingid":2363},{"bookingid":4130},{"bookingid":1215},{"bookingid":25},{"bookingid":1911},{"bookingid":2708},{"bookingid":2636},{"bookingid":4115},{"bookingid":4127},{"bookingid":4116},{"bookingid":2001},{"bookingid":516},{"bookingid":2090},{"bookingid":1213},{"bookingid":2638},{"bookingid":2378},{"bookingid":3918},{"bookingid":1978},{"bookingid":339},{"bookingid":1378},{"bookingid":2741},{"bookingid":2203},{"bookingid":3868},{"bookingid":1056},{"bookingid":2058},{"bookingid":956},{"bookingid":2361},{"bookingid":399},{"bookingid":1105},{"bookingid":3352},{"bookingid":765},{"bookingid":1546},{"bookingid":559},{"bookingid":1239},{"bookingid":2419},{"bookingid":3568},{"bookingid":3006},{"bookingid":2589},{"bookingid":1869},{"bookingid":3088},{"bookingid":3133},{"bookingid":2539},{"bookingid":3434},{"bookingid":4105},{"bookingid":3197},{"bookingid":1227},{"bookingid":1384},{"bookingid":1034},{"bookingid":3368},{"bookingid":1502},{"bookingid":1428},{"bookingid":2393},{"bookingid":4410},{"bookingid":1605},{"bookingid":1908},{"bookingid":3765},{"bookingid":3820},{"bookingid":51},{"bookingid":3758},{"bookingid":281},{"bookingid":4382},{"bookingid":291},{"bookingid":2188},{"bookingid":3198},{"bookingid":1801},{"bookingid":4334},{"bookingid":1451},{"bookingid":1161},{"bookingid":2869},{"bookingid":1787},{"bookingid":3301},{"bookingid":234},{"bookingid":1647},{"bookingid":1919},{"bookingid":3237},{"bookingid":256},{"bookingid":3490},{"bookingid":3631},{"bookingid":480},{"bookingid":3289},{"bookingid":3556},{"bookingid":2280},{"bookingid":199},{"bookingid":2771},{"bookingid":3471},{"bookingid":2621},{"bookingid":1264},{"bookingid":1472},{"bookingid":3690},{"bookingid":2383},{"bookingid":1165},{"bookingid":2529},{"bookingid":2493},{"bookingid":1069},{"bookingid":4003},{"bookingid":883},{"bookingid":3329},{"bookingid":1932},{"bookingid":1158},{"bookingid":1487},{"bookingid":579},{"bookingid":2382},{"bookingid":2155},{"bookingid":2985},{"bookingid":2818},{"bookingid":8},{"bookingid":4226},{"bookingid":1383},{"bookingid":1844},{"bookingid":1803},{"bookingid":4016},{"bookingid":695},{"bookingid":1655},{"bookingid":3767},{"bookingid":1691},{"bookingid":2033},{"bookingid":1143},{"bookingid":1723},{"bookingid":232},{"bookingid":3925},{"bookingid":3304},{"bookingid":1862},{"bookingid":3884},{"bookingid":3440},{"bookingid":407},{"bookingid":3089},{"bookingid":3129},{"bookingid":3703},{"bookingid":43},{"bookingid":2752},{"bookingid":1959},{"bookingid":4252},{"bookingid":1},{"bookingid":3230},{"bookingid":1073},{"bookingid":4208},{"bookingid":3701},{"bookingid":907},{"bookingid":1222},{"bookingid":45},{"bookingid":1333},{"bookingid":1086},{"bookingid":945},{"bookingid":1977},{"bookingid":4204},{"bookingid":294},{"bookingid":2206},{"bookingid":3500},{"bookingid":2427},{"bookingid":2410},{"bookingid":1861},{"bookingid":2653},{"bookingid":849},{"bookingid":2750},{"bookingid":678},{"bookingid":1003},{"bookingid":57},{"bookingid":3909},{"bookingid":4318},{"bookingid":1355},{"bookingid":2794},{"bookingid":633},{"bookingid":3964},{"bookingid":2726},{"bookingid":1219},{"bookingid":3011},{"bookingid":1079},{"bookingid":100},{"bookingid":520},{"bookingid":2955},{"bookingid":1689},{"bookingid":373},{"bookingid":413},{"bookingid":3643},{"bookingid":3152},{"bookingid":2237},{"bookingid":4136},{"bookingid":276},{"bookingid":4063},{"bookingid":978},{"bookingid":228},{"bookingid":3684},{"bookingid":1762},{"bookingid":983},{"bookingid":3786},{"bookingid":1537},{"bookingid":2834},{"bookingid":3581},{"bookingid":1123},{"bookingid":3603},{"bookingid":1713},{"bookingid":352},{"bookingid":38},{"bookingid":583},{"bookingid":664},{"bookingid":1345},{"bookingid":1575},{"bookingid":70},{"bookingid":3315},{"bookingid":508},{"bookingid":2110},{"bookingid":179},{"bookingid":3072},{"bookingid":1391},{"bookingid":1304},{"bookingid":4365},{"bookingid":736},{"bookingid":3664},{"bookingid":36},{"bookingid":3320},{"bookingid":2488},{"bookingid":3627},{"bookingid":3539},{"bookingid":3454},{"bookingid":382},{"bookingid":3212},{"bookingid":995},{"bookingid":1167},{"bookingid":3265},{"bookingid":4284},{"bookingid":2176},{"bookingid":2840},{"bookingid":1373},{"bookingid":208},{"bookingid":2267},{"bookingid":2252},{"bookingid":3628},{"bookingid":1960},{"bookingid":1672},{"bookingid":577},{"bookingid":1880},{"bookingid":425},{"bookingid":2555},{"bookingid":2757},{"bookingid":1009},{"bookingid":770},{"bookingid":2469},{"bookingid":3116},{"bookingid":2027},{"bookingid":2861},{"bookingid":3022},{"bookingid":4415},{"bookingid":180},{"bookingid":485},{"bookingid":3625},{"bookingid":3286},{"bookingid":121},{"bookingid":2936},{"bookingid":3082},{"bookingid":4192},{"bookingid":1788},{"bookingid":2432},{"bookingid":2098},{"bookingid":2909},{"bookingid":1422},{"bookingid":1326},{"bookingid":404},{"bookingid":1745},{"bookingid":4175},{"bookingid":1300},{"bookingid":3199},{"bookingid":805},{"bookingid":2453},{"bookingid":1441},{"bookingid":1496},{"bookingid":1306},{"bookingid":115},{"bookingid":1881},{"bookingid":1016},{"bookingid":432},{"bookingid":4167},{"bookingid":1839},{"bookingid":1106},{"bookingid":2579},{"bookingid":1340},{"bookingid":174},{"bookingid":4337},{"bookingid":4232},{"bookingid":395},{"bookingid":1512},{"bookingid":812},{"bookingid":1255},{"bookingid":2718},{"bookingid":3244},{"bookingid":5},{"bookingid":295},{"bookingid":2063},{"bookingid":2801},{"bookingid":4117},{"bookingid":1185},{"bookingid":3965},{"bookingid":3023},{"bookingid":1533},{"bookingid":2763},{"bookingid":4387},{"bookingid":1198},{"bookingid":1650},{"bookingid":3635},{"bookingid":1283},{"bookingid":1677},{"bookingid":4069},{"bookingid":3698},{"bookingid":2607},{"bookingid":622},{"bookingid":2164},{"bookingid":411},{"boo... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230827 14:49:37.292" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:35.373" endtime="20230827 14:49:37.292"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:37.292" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:37.292" endtime="20230827 14:49:37.292"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:35.373" endtime="20230827 14:49:37.292"/>
+</kw>
+<kw name="AND Validate Status code Get Booking Ids response" library="Booker_SD">
+<kw name="System sets GET Request for Booking Ids" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:37.292" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:37.292" endtime="20230827 14:49:37.292"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${booking_ids_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:37.292" level="INFO">${endpoint} = /booking</msg>
+<status status="PASS" starttime="20230827 14:49:37.292" endtime="20230827 14:49:37.292"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230827 14:49:39.424" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230827 14:49:39.424" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '56974', 'Etag': 'W/"de8e-hG0YEmuv/vyGtiGpVHLmUsnjhA4"', 'Date': 'Sun, 27 Aug 2023 09:19:38 GMT', 'Via': '1.1 vegur'} 
+ body=[{"bookingid":2661},{"bookingid":2770},{"bookingid":3469},{"bookingid":1467},{"bookingid":3718},{"bookingid":2292},{"bookingid":3031},{"bookingid":3395},{"bookingid":3345},{"bookingid":2384},{"bookingid":2253},{"bookingid":3818},{"bookingid":871},{"bookingid":627},{"bookingid":2506},{"bookingid":2520},{"bookingid":780},{"bookingid":860},{"bookingid":3294},{"bookingid":3400},{"bookingid":4012},{"bookingid":457},{"bookingid":188},{"bookingid":185},{"bookingid":3998},{"bookingid":4059},{"bookingid":3382},{"bookingid":2312},{"bookingid":3875},{"bookingid":1613},{"bookingid":466},{"bookingid":916},{"bookingid":1071},{"bookingid":1398},{"bookingid":2782},{"bookingid":1525},{"bookingid":4405},{"bookingid":1030},{"bookingid":1014},{"bookingid":4257},{"bookingid":1262},{"bookingid":9},{"bookingid":998},{"bookingid":1781},{"bookingid":85},{"bookingid":4274},{"bookingid":3208},{"bookingid":2396},{"bookingid":574},{"bookingid":1168},{"bookingid":2050},{"bookingid":2665},{"bookingid":3019},{"bookingid":2609},{"bookingid":2261},{"bookingid":3350},{"bookingid":4269},{"bookingid":2505},{"bookingid":2727},{"bookingid":2626},{"bookingid":3039},{"bookingid":582},{"bookingid":3465},{"bookingid":759},{"bookingid":2691},{"bookingid":442},{"bookingid":33},{"bookingid":906},{"bookingid":4121},{"bookingid":3988},{"bookingid":2627},{"bookingid":3147},{"bookingid":802},{"bookingid":4025},{"bookingid":224},{"bookingid":815},{"bookingid":1767},{"bookingid":1327},{"bookingid":1461},{"bookingid":2004},{"bookingid":3707},{"bookingid":1061},{"bookingid":1809},{"bookingid":2604},{"bookingid":3207},{"bookingid":2673},{"bookingid":66},{"bookingid":4210},{"bookingid":4207},{"bookingid":2436},{"bookingid":543},{"bookingid":1925},{"bookingid":962},{"bookingid":3043},{"bookingid":126},{"bookingid":2112},{"bookingid":1414},{"bookingid":4288},{"bookingid":3249},{"bookingid":993},{"bookingid":1815},{"bookingid":2562},{"bookingid":748},{"bookingid":1299},{"bookingid":4326},{"bookingid":3913},{"bookingid":672},{"bookingid":905},{"bookingid":2978},{"bookingid":3281},{"bookingid":2331},{"bookingid":3915},{"bookingid":251},{"bookingid":3982},{"bookingid":4273},{"bookingid":2053},{"bookingid":3798},{"bookingid":1109},{"bookingid":1873},{"bookingid":3543},{"bookingid":481},{"bookingid":1245},{"bookingid":4294},{"bookingid":3851},{"bookingid":2250},{"bookingid":3518},{"bookingid":3666},{"bookingid":135},{"bookingid":2054},{"bookingid":3186},{"bookingid":3292},{"bookingid":2781},{"bookingid":3173},{"bookingid":4135},{"bookingid":2096},{"bookingid":2463},{"bookingid":2521},{"bookingid":2310},{"bookingid":2067},{"bookingid":3052},{"bookingid":4007},{"bookingid":4169},{"bookingid":2544},{"bookingid":1060},{"bookingid":3679},{"bookingid":81},{"bookingid":4096},{"bookingid":2495},{"bookingid":4233},{"bookingid":2321},{"bookingid":3649},{"bookingid":3521},{"bookingid":1659},{"bookingid":782},{"bookingid":3896},{"bookingid":3872},{"bookingid":558},{"bookingid":120},{"bookingid":645},{"bookingid":2078},{"bookingid":735},{"bookingid":1986},{"bookingid":1166},{"bookingid":3348},{"bookingid":3054},{"bookingid":934},{"bookingid":3540},{"bookingid":794},{"bookingid":2699},{"bookingid":3614},{"bookingid":1884},{"bookingid":3857},{"bookingid":1027},{"bookingid":3947},{"bookingid":1828},{"bookingid":2921},{"bookingid":3676},{"bookingid":4389},{"bookingid":3770},{"bookingid":1581},{"bookingid":3296},{"bookingid":1892},{"bookingid":710},{"bookingid":3107},{"bookingid":2885},{"bookingid":3682},{"bookingid":1097},{"bookingid":2768},{"bookingid":1872},{"bookingid":3420},{"bookingid":1295},{"bookingid":2296},{"bookingid":400},{"bookingid":3905},{"bookingid":300},{"bookingid":2264},{"bookingid":3070},{"bookingid":624},{"bookingid":3271},{"bookingid":621},{"bookingid":3504},{"bookingid":2117},{"bookingid":549},{"bookingid":2625},{"bookingid":3919},{"bookingid":1133},{"bookingid":2656},{"bookingid":1536},{"bookingid":3602},{"bookingid":3267},{"bookingid":1276},{"bookingid":2179},{"bookingid":2533},{"bookingid":3003},{"bookingid":3923},{"bookingid":1626},{"bookingid":2957},{"bookingid":3100},{"bookingid":1852},{"bookingid":2984},{"bookingid":3708},{"bookingid":3815},{"bookingid":3516},{"bookingid":2492},{"bookingid":1365},{"bookingid":2424},{"bookingid":3067},{"bookingid":2363},{"bookingid":4130},{"bookingid":1215},{"bookingid":25},{"bookingid":1911},{"bookingid":2708},{"bookingid":2636},{"bookingid":4115},{"bookingid":4127},{"bookingid":4116},{"bookingid":2001},{"bookingid":516},{"bookingid":2090},{"bookingid":1213},{"bookingid":2638},{"bookingid":2378},{"bookingid":3918},{"bookingid":1978},{"bookingid":339},{"bookingid":1378},{"bookingid":2741},{"bookingid":2203},{"bookingid":3868},{"bookingid":1056},{"bookingid":2058},{"bookingid":956},{"bookingid":2361},{"bookingid":399},{"bookingid":1105},{"bookingid":3352},{"bookingid":765},{"bookingid":1546},{"bookingid":559},{"bookingid":1239},{"bookingid":2419},{"bookingid":3568},{"bookingid":3006},{"bookingid":2589},{"bookingid":1869},{"bookingid":3088},{"bookingid":3133},{"bookingid":2539},{"bookingid":3434},{"bookingid":4105},{"bookingid":3197},{"bookingid":1227},{"bookingid":1384},{"bookingid":1034},{"bookingid":3368},{"bookingid":1502},{"bookingid":1428},{"bookingid":2393},{"bookingid":4410},{"bookingid":1605},{"bookingid":1908},{"bookingid":3765},{"bookingid":3820},{"bookingid":51},{"bookingid":3758},{"bookingid":281},{"bookingid":4382},{"bookingid":291},{"bookingid":2188},{"bookingid":3198},{"bookingid":1801},{"bookingid":4334},{"bookingid":1451},{"bookingid":1161},{"bookingid":2869},{"bookingid":1787},{"bookingid":3301},{"bookingid":234},{"bookingid":1647},{"bookingid":1919},{"bookingid":3237},{"bookingid":256},{"bookingid":3490},{"bookingid":3631},{"bookingid":480},{"bookingid":3289},{"bookingid":3556},{"bookingid":2280},{"bookingid":199},{"bookingid":2771},{"bookingid":3471},{"bookingid":2621},{"bookingid":1264},{"bookingid":1472},{"bookingid":3690},{"bookingid":2383},{"bookingid":1165},{"bookingid":2529},{"bookingid":2493},{"bookingid":1069},{"bookingid":4003},{"bookingid":883},{"bookingid":3329},{"bookingid":1932},{"bookingid":1158},{"bookingid":1487},{"bookingid":579},{"bookingid":2382},{"bookingid":2155},{"bookingid":2985},{"bookingid":2818},{"bookingid":8},{"bookingid":4226},{"bookingid":1383},{"bookingid":1844},{"bookingid":1803},{"bookingid":4016},{"bookingid":695},{"bookingid":1655},{"bookingid":3767},{"bookingid":1691},{"bookingid":2033},{"bookingid":1143},{"bookingid":1723},{"bookingid":232},{"bookingid":3925},{"bookingid":3304},{"bookingid":1862},{"bookingid":3884},{"bookingid":3440},{"bookingid":407},{"bookingid":3089},{"bookingid":3129},{"bookingid":3703},{"bookingid":43},{"bookingid":2752},{"bookingid":1959},{"bookingid":4252},{"bookingid":1},{"bookingid":3230},{"bookingid":1073},{"bookingid":4208},{"bookingid":3701},{"bookingid":907},{"bookingid":1222},{"bookingid":45},{"bookingid":1333},{"bookingid":1086},{"bookingid":945},{"bookingid":1977},{"bookingid":4204},{"bookingid":294},{"bookingid":2206},{"bookingid":3500},{"bookingid":2427},{"bookingid":2410},{"bookingid":1861},{"bookingid":2653},{"bookingid":849},{"bookingid":2750},{"bookingid":678},{"bookingid":1003},{"bookingid":57},{"bookingid":3909},{"bookingid":4318},{"bookingid":1355},{"bookingid":2794},{"bookingid":633},{"bookingid":3964},{"bookingid":2726},{"bookingid":1219},{"bookingid":3011},{"bookingid":1079},{"bookingid":100},{"bookingid":520},{"bookingid":2955},{"bookingid":1689},{"bookingid":373},{"bookingid":413},{"bookingid":3643},{"bookingid":3152},{"bookingid":2237},{"bookingid":4136},{"bookingid":276},{"bookingid":4063},{"bookingid":978},{"bookingid":228},{"bookingid":3684},{"bookingid":1762},{"bookingid":983},{"bookingid":3786},{"bookingid":1537},{"bookingid":2834},{"bookingid":3581},{"bookingid":1123},{"bookingid":3603},{"bookingid":1713},{"bookingid":352},{"bookingid":38},{"bookingid":583},{"bookingid":664},{"bookingid":1345},{"bookingid":1575},{"bookingid":70},{"bookingid":3315},{"bookingid":508},{"bookingid":2110},{"bookingid":179},{"bookingid":3072},{"bookingid":1391},{"bookingid":1304},{"bookingid":4365},{"bookingid":736},{"bookingid":3664},{"bookingid":36},{"bookingid":3320},{"bookingid":4420},{"bookingid":2488},{"bookingid":3627},{"bookingid":3539},{"bookingid":3454},{"bookingid":382},{"bookingid":3212},{"bookingid":995},{"bookingid":1167},{"bookingid":3265},{"bookingid":4284},{"bookingid":2176},{"bookingid":2840},{"bookingid":1373},{"bookingid":208},{"bookingid":2267},{"bookingid":2252},{"bookingid":3628},{"bookingid":1960},{"bookingid":1672},{"bookingid":577},{"bookingid":1880},{"bookingid":425},{"bookingid":2555},{"bookingid":2757},{"bookingid":1009},{"bookingid":770},{"bookingid":2469},{"bookingid":3116},{"bookingid":2027},{"bookingid":2861},{"bookingid":3022},{"bookingid":4415},{"bookingid":180},{"bookingid":485},{"bookingid":3625},{"bookingid":3286},{"bookingid":121},{"bookingid":2936},{"bookingid":3082},{"bookingid":4192},{"bookingid":1788},{"bookingid":2432},{"bookingid":2098},{"bookingid":2909},{"bookingid":1422},{"bookingid":1326},{"bookingid":404},{"bookingid":1745},{"bookingid":4175},{"bookingid":1300},{"bookingid":3199},{"bookingid":805},{"bookingid":2453},{"bookingid":1441},{"bookingid":1496},{"bookingid":1306},{"bookingid":115},{"bookingid":1881},{"bookingid":1016},{"bookingid":432},{"bookingid":4167},{"bookingid":1839},{"bookingid":1106},{"bookingid":4425},{"bookingid":2579},{"bookingid":1340},{"bookingid":174},{"bookingid":4337},{"bookingid":4232},{"bookingid":395},{"bookingid":1512},{"bookingid":812},{"bookingid":1255},{"bookingid":2718},{"bookingid":3244},{"bookingid":5},{"bookingid":295},{"bookingid":2063},{"bookingid":2801},{"bookingid":4117},{"bookingid":1185},{"bookingid":3965},{"bookingid":3023},{"bookingid":1533},{"bookingid":2763},{"bookingid":4387},{"bookingid":1198},{"bookingid":1650},{"bookingid":3635},{"bookingid":1283},{"bookingid":1677},{"bookingid":4069},{"bookingid":3698},{"bookingid":2607},{"bookingid":622},{"bo... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230827 14:49:39.424" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:37.292" endtime="20230827 14:49:39.424"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:39.424" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:39.424" endtime="20230827 14:49:39.424"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:37.292" endtime="20230827 14:49:39.424"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:39.424" level="INFO">${content} = 200</msg>
+<status status="PASS" starttime="20230827 14:49:39.424" endtime="20230827 14:49:39.424"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${content}</arg>
+<arg>${success}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230827 14:49:39.424" endtime="20230827 14:49:39.424"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:37.292" endtime="20230827 14:49:39.424"/>
+</kw>
+<kw name="THEN Fetch The Value from Response" library="Booker_SD">
+<arg>${response}</arg>
+<arg>$[1].bookingid</arg>
+<kw name="Convert To String" library="BuiltIn">
+<var>${reponse}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:39.424" level="INFO">${reponse} = [{"bookingid":2661},{"bookingid":2770},{"bookingid":3469},{"bookingid":1467},{"bookingid":3718},{"bookingid":2292},{"bookingid":3031},{"bookingid":3395},{"bookingid":3345},{"bookingid":2384},{"booking...</msg>
+<status status="PASS" starttime="20230827 14:49:39.424" endtime="20230827 14:49:39.424"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${reponse}</var>
+<arg>${reponse}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230827 14:49:39.424" level="INFO">${reponse} = [{'bookingid': 2661}, {'bookingid': 2770}, {'bookingid': 3469}, {'bookingid': 1467}, {'bookingid': 3718}, {'bookingid': 2292}, {'bookingid': 3031}, {'bookingid': 3395}, {'bookingid': 3345}, {'bookingi...</msg>
+<status status="PASS" starttime="20230827 14:49:39.424" endtime="20230827 14:49:39.424"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${Getval}</var>
+<arg>${reponse}</arg>
+<arg>${tag}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230827 14:49:39.456" level="INFO">${Getval} = [2770]</msg>
+<status status="PASS" starttime="20230827 14:49:39.424" endtime="20230827 14:49:39.456"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Getval}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:39.456" level="INFO">${Getval} = [2770]</msg>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:39.456"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:39.424" endtime="20230827 14:49:39.456"/>
+</kw>
+<tag>GetBookingIds</tag>
+<status status="PASS" starttime="20230827 14:49:35.358" endtime="20230827 14:49:39.456"/>
+</test>
+<test id="s1-t2" name="TC_02 GET SINGLE BOOKING ID WITH VALID DATA" line="13">
+<kw name="GIVEN System set Header Details" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:39.456" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:39.456"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:39.456" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:39.456"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:39.456"/>
+</kw>
+<kw name="WHEN System sets GET Request for Single Booking Id" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:39.456" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:39.456"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:39.456" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:39.456"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230827 14:49:39.898" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230827 14:49:39.898" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '172', 'Etag': 'W/"ac-l2dM95evcbhJ4LV5ezALhBBtDzo"', 'Date': 'Sun, 27 Aug 2023 09:19:39 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Mary","lastname":"Jackson","totalprice":1000,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:39.898" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:39.898"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:39.898" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:39.898" endtime="20230827 14:49:39.898"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:39.898"/>
+</kw>
+<kw name="AND Validate Status code Get Single Booking Id response" library="Booker_SD">
+<kw name="System sets GET Request for Single Booking Id" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:39.898" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:39.898" endtime="20230827 14:49:39.898"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:39.898" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:39.898" endtime="20230827 14:49:39.898"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230827 14:49:40.274" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230827 14:49:40.274" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '172', 'Etag': 'W/"ac-l2dM95evcbhJ4LV5ezALhBBtDzo"', 'Date': 'Sun, 27 Aug 2023 09:19:40 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Mary","lastname":"Jackson","totalprice":1000,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:40.274" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:39.898" endtime="20230827 14:49:40.274"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:40.278" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:40.274" endtime="20230827 14:49:40.278"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:39.898" endtime="20230827 14:49:40.278"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:40.279" level="INFO">${content} = 200</msg>
+<status status="PASS" starttime="20230827 14:49:40.278" endtime="20230827 14:49:40.279"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${content}</arg>
+<arg>${success}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230827 14:49:40.279" endtime="20230827 14:49:40.279"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:39.898" endtime="20230827 14:49:40.281"/>
+</kw>
+<kw name="THEN Fetch The Value from Response" library="Booker_SD">
+<arg>${response}</arg>
+<arg>$.firstname</arg>
+<kw name="Convert To String" library="BuiltIn">
+<var>${reponse}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:40.281" level="INFO">${reponse} = {"firstname":"Mary","lastname":"Jackson","totalprice":1000,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"}</msg>
+<status status="PASS" starttime="20230827 14:49:40.281" endtime="20230827 14:49:40.281"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${reponse}</var>
+<arg>${reponse}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230827 14:49:40.281" level="INFO">${reponse} = {'firstname': 'Mary', 'lastname': 'Jackson', 'totalprice': 1000, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast'}</msg>
+<status status="PASS" starttime="20230827 14:49:40.281" endtime="20230827 14:49:40.281"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${Getval}</var>
+<arg>${reponse}</arg>
+<arg>${tag}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230827 14:49:40.383" level="INFO">${Getval} = ['Mary']</msg>
+<status status="PASS" starttime="20230827 14:49:40.281" endtime="20230827 14:49:40.386"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Getval}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:40.386" level="INFO">${Getval} = ['Mary']</msg>
+<status status="PASS" starttime="20230827 14:49:40.386" endtime="20230827 14:49:40.386"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:40.281" endtime="20230827 14:49:40.386"/>
+</kw>
+<tag>GetSingleBookingId</tag>
+<status status="PASS" starttime="20230827 14:49:39.456" endtime="20230827 14:49:40.386"/>
+</test>
+<test id="s1-t3" name="TC_03 GET SINGLE BOOKING ID WITH VALID DATA" line="20">
+<kw name="GIVEN System set Header Details" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:40.398" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:40.398" endtime="20230827 14:49:40.398"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:40.398" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:40.398" endtime="20230827 14:49:40.398"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:40.398" endtime="20230827 14:49:40.398"/>
+</kw>
+<kw name="WHEN System sets GET Request for Single Booking Wrong Id" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:40.398" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:40.398" endtime="20230827 14:49:40.398"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_wrong_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:40.398" level="INFO">${endpoint} = /booking/000</msg>
+<status status="PASS" starttime="20230827 14:49:40.398" endtime="20230827 14:49:40.398"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230827 14:49:40.781" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/000 
+ path_url=/booking/000 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230827 14:49:40.781" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/000 
+ status=404, reason=Not Found 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'Etag': 'W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"', 'Date': 'Sun, 27 Aug 2023 09:19:40 GMT', 'Via': '1.1 vegur'} 
+ body=Not Found 
+ </msg>
+<msg timestamp="20230827 14:49:40.781" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/booking/000</msg>
+<status status="FAIL" starttime="20230827 14:49:40.398" endtime="20230827 14:49:40.796"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.796"/>
+</kw>
+<status status="FAIL" starttime="20230827 14:49:40.398" endtime="20230827 14:49:40.796"/>
+</kw>
+<kw name="THEN Validate Status code Get Single Booking Wrong Id response" library="Booker_SD">
+<status status="NOT RUN" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.796"/>
+</kw>
+<tag>GetSingleBookingIdWrong</tag>
+<status status="FAIL" starttime="20230827 14:49:40.395" endtime="20230827 14:49:40.796">HTTPError: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/booking/000</status>
+</test>
+<test id="s1-t4" name="TC_04 CREATE BOOKING DATA" line="26">
+<kw name="GIVEN System set Header Details" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:40.796" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.796"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:40.796" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.796"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.796"/>
+</kw>
+<kw name="WHEN System sets POST Request for Create Booking" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:40.796" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.796"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${booking_ids_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:40.796" level="INFO">${endpoint} = /booking</msg>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.796"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${create_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:40.796" level="INFO">${body} = {'firstname': 'Piyush', 'lastname': 'Zope', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast1'}</msg>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.796"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${body}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:40.807" level="INFO">${body} = {'firstname': 'Piyush', 'lastname': 'Zope', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast1'}</msg>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:40.807"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>/booking</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230827 14:49:40.807" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:41.192" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '185'} 
+ body={"firstname": "Piyush", "lastname": "Zope", "totalprice": 111, "depositpaid": true, "bookingdates": {"checkin": "2018-01-01", "checkout": "2019-01-01"}, "additionalneeds": "Breakfast1"} 
+ </msg>
+<msg timestamp="20230827 14:49:41.192" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '200', 'Etag': 'W/"c8-s11jfNjf+ULT6uUXB3TL+iQthPs"', 'Date': 'Sun, 27 Aug 2023 09:19:41 GMT', 'Via': '1.1 vegur'} 
+ body={"bookingid":4456,"booking":{"firstname":"Piyush","lastname":"Zope","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast1"}} 
+ </msg>
+<msg timestamp="20230827 14:49:41.192" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:40.807" endtime="20230827 14:49:41.192"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.192" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:41.192" endtime="20230827 14:49:41.192"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:41.192"/>
+</kw>
+<kw name="THEN Validate Create booking response" library="Booker_SD">
+<kw name="System sets POST Request for Create Booking" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:41.192" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:41.192" endtime="20230827 14:49:41.192"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${booking_ids_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:41.192" level="INFO">${endpoint} = /booking</msg>
+<status status="PASS" starttime="20230827 14:49:41.192" endtime="20230827 14:49:41.192"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${create_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:41.192" level="INFO">${body} = {'firstname': 'Piyush', 'lastname': 'Zope', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast1'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.192" endtime="20230827 14:49:41.192"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${body}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.192" level="INFO">${body} = {'firstname': 'Piyush', 'lastname': 'Zope', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast1'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.192" endtime="20230827 14:49:41.192"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>/booking</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230827 14:49:41.192" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:41.556" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '185'} 
+ body={"firstname": "Piyush", "lastname": "Zope", "totalprice": 111, "depositpaid": true, "bookingdates": {"checkin": "2018-01-01", "checkout": "2019-01-01"}, "additionalneeds": "Breakfast1"} 
+ </msg>
+<msg timestamp="20230827 14:49:41.556" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '200', 'Etag': 'W/"c8-41T8r/r/TJ/eu1nd3l2lEM3XyzY"', 'Date': 'Sun, 27 Aug 2023 09:19:41 GMT', 'Via': '1.1 vegur'} 
+ body={"bookingid":4458,"booking":{"firstname":"Piyush","lastname":"Zope","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast1"}} 
+ </msg>
+<msg timestamp="20230827 14:49:41.556" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:41.192" endtime="20230827 14:49:41.556"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.556" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.556"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:41.192" endtime="20230827 14:49:41.556"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${response.text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:41.556" level="INFO">${content} = {"bookingid":4458,"booking":{"firstname":"Piyush","lastname":"Zope","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast1"}}</msg>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.556"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${content}</arg>
+<arg>Piyush</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.556"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:41.192" endtime="20230827 14:49:41.556"/>
+</kw>
+<tag>createbooking</tag>
+<status status="PASS" starttime="20230827 14:49:40.796" endtime="20230827 14:49:41.556"/>
+</test>
+<test id="s1-t5" name="TC_05 GENERATING AUTH TOKEN" line="32">
+<kw name="GIVEN System set Header Details" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:41.556" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.556"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.556" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.556"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.556"/>
+</kw>
+<kw name="WHEN System sets token for requests" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:41.556" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.572"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${token_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:41.573" level="INFO">${endpoint} = /auth</msg>
+<status status="PASS" starttime="20230827 14:49:41.572" endtime="20230827 14:49:41.573"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${1}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:41.573" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.573" endtime="20230827 14:49:41.573"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.574" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.574" endtime="20230827 14:49:41.574"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${1}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230827 14:49:41.575" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:41.935" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body={"username": "admin", "password": "password123"} 
+ </msg>
+<msg timestamp="20230827 14:49:41.935" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-HZgT+cSRtUyK7YGYErb5BZNvMg0"', 'Date': 'Sun, 27 Aug 2023 09:19:41 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"e776b09a4dbbdf1"} 
+ </msg>
+<msg timestamp="20230827 14:49:41.935" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:41.574" endtime="20230827 14:49:41.935"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.935" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:41.935" endtime="20230827 14:49:41.935"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${response_text}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:41.935" level="INFO">${response_text} = {"token":"e776b09a4dbbdf1"}</msg>
+<status status="PASS" starttime="20230827 14:49:41.935" endtime="20230827 14:49:41.935"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${token}</var>
+<arg>json.loads('''${response_text}''')['token']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230827 14:49:41.935" level="INFO">${token} = e776b09a4dbbdf1</msg>
+<status status="PASS" starttime="20230827 14:49:41.935" endtime="20230827 14:49:41.935"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.935" level="INFO">${token} = e776b09a4dbbdf1</msg>
+<status status="PASS" starttime="20230827 14:49:41.935" endtime="20230827 14:49:41.935"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.935"/>
+</kw>
+<tag>token</tag>
+<status status="PASS" starttime="20230827 14:49:41.556" endtime="20230827 14:49:41.935"/>
+</test>
+<test id="s1-t6" name="TC_06 Update Booking using token" line="37">
+<kw name="GIVEN System set Header Details" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:41.940" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.940" endtime="20230827 14:49:41.940"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.940" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.940" endtime="20230827 14:49:41.940"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:41.940" endtime="20230827 14:49:41.940"/>
+</kw>
+<kw name="WHEN System sets Token in Header and Sends Put Request for Update Booking" library="Booker_SD">
+<kw name="System sets token for requests" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:41.943" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:41.943" endtime="20230827 14:49:41.943"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${token_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:41.943" level="INFO">${endpoint} = /auth</msg>
+<status status="PASS" starttime="20230827 14:49:41.943" endtime="20230827 14:49:41.943"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${1}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:41.943" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.943" endtime="20230827 14:49:41.943"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:41.943" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:41.943" endtime="20230827 14:49:41.943"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${1}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230827 14:49:41.943" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:42.348" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body={"username": "admin", "password": "password123"} 
+ </msg>
+<msg timestamp="20230827 14:49:42.348" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-XyVL2baf/y94W1Z1Z3Mze/gKOAo"', 'Date': 'Sun, 27 Aug 2023 09:19:42 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"230bcfd13863d1e"} 
+ </msg>
+<msg timestamp="20230827 14:49:42.348" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:41.943" endtime="20230827 14:49:42.348"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:42.348" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:42.348" endtime="20230827 14:49:42.348"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${response_text}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:42.348" level="INFO">${response_text} = {"token":"230bcfd13863d1e"}</msg>
+<status status="PASS" starttime="20230827 14:49:42.348" endtime="20230827 14:49:42.348"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${token}</var>
+<arg>json.loads('''${response_text}''')['token']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230827 14:49:42.348" level="INFO">${token} = 230bcfd13863d1e</msg>
+<status status="PASS" starttime="20230827 14:49:42.348" endtime="20230827 14:49:42.348"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:42.348" level="INFO">${token} = 230bcfd13863d1e</msg>
+<status status="PASS" starttime="20230827 14:49:42.348" endtime="20230827 14:49:42.348"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:41.943" endtime="20230827 14:49:42.348"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:42.348" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:42.348" endtime="20230827 14:49:42.348"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:42.348" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:42.348" endtime="20230827 14:49:42.348"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${update_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:42.348" level="INFO">${body} = {'firstname': 'James', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast'}</msg>
+<status status="PASS" starttime="20230827 14:49:42.348" endtime="20230827 14:49:42.348"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<arg>cookie=token=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:42.353" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=230bcfd13863d1e'}</msg>
+<status status="PASS" starttime="20230827 14:49:42.353" endtime="20230827 14:49:42.353"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:42.353" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=230bcfd13863d1e'}</msg>
+<status status="PASS" starttime="20230827 14:49:42.353" endtime="20230827 14:49:42.353"/>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<msg timestamp="20230827 14:49:42.353" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230827 14:49:42.713" level="INFO">PUT Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'cookie': 'token=230bcfd13863d1e', 'Content-Length': '184'} 
+ body={"firstname": "James", "lastname": "Brown", "totalprice": 111, "depositpaid": true, "bookingdates": {"checkin": "2018-01-01", "checkout": "2019-01-01"}, "additionalneeds": "Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:42.713" level="INFO">PUT Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '170', 'Etag': 'W/"aa-waBDObUc25azXZ1Gkrz0LIEDGrg"', 'Date': 'Sun, 27 Aug 2023 09:19:42 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"James","lastname":"Brown","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:42.713" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:42.353" endtime="20230827 14:49:42.713"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:42.713" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:42.713"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:41.940" endtime="20230827 14:49:42.713"/>
+</kw>
+<kw name="THEN Validate update booking response" library="Booker_SD">
+<kw name="System sets Token in Header and Sends Put Request for Update Booking" library="Booker_SD">
+<kw name="System sets token for requests" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:42.713" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:42.713"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${token_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:42.713" level="INFO">${endpoint} = /auth</msg>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:42.713"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${1}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:42.713" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:42.713"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:42.713" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:42.713"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${1}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230827 14:49:42.713" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:43.091" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body={"username": "admin", "password": "password123"} 
+ </msg>
+<msg timestamp="20230827 14:49:43.091" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-S2aIevsJUf8L2B1f2OpDxaMlLdM"', 'Date': 'Sun, 27 Aug 2023 09:19:42 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"bba8ab4d645370e"} 
+ </msg>
+<msg timestamp="20230827 14:49:43.091" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:43.091"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:43.091" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${response_text}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">${response_text} = {"token":"bba8ab4d645370e"}</msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${token}</var>
+<arg>json.loads('''${response_text}''')['token']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">${token} = bba8ab4d645370e</msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">${token} = bba8ab4d645370e</msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.093"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${update_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">${body} = {'firstname': 'James', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<arg>cookie=token=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=bba8ab4d645370e'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:43.093" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=bba8ab4d645370e'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.093"/>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<msg timestamp="20230827 14:49:43.093" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230827 14:49:43.504" level="INFO">PUT Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'cookie': 'token=bba8ab4d645370e', 'Content-Length': '184'} 
+ body={"firstname": "James", "lastname": "Brown", "totalprice": 111, "depositpaid": true, "bookingdates": {"checkin": "2018-01-01", "checkout": "2019-01-01"}, "additionalneeds": "Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:43.504" level="INFO">PUT Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '170', 'Etag': 'W/"aa-waBDObUc25azXZ1Gkrz0LIEDGrg"', 'Date': 'Sun, 27 Aug 2023 09:19:43 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"James","lastname":"Brown","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:43.504" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:43.093" endtime="20230827 14:49:43.504"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:43.504" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:43.504"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${response.text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:43.504" level="INFO">${content} = {"firstname":"James","lastname":"Brown","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"}</msg>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${content}</arg>
+<arg>James</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:42.713" endtime="20230827 14:49:43.504"/>
+</kw>
+<tag>updatebooking</tag>
+<status status="PASS" starttime="20230827 14:49:41.939" endtime="20230827 14:49:43.504"/>
+</test>
+<test id="s1-t7" name="TC_07 Update Booking without token" line="43">
+<kw name="GIVEN SYSTEM SET HEADER DETAILS" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:43.504" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:43.504" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<kw name="WHEN System sets Put Request for Update Booking without token" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:43.504" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:43.504" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${update_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:43.504" level="INFO">${body} = {'firstname': 'James', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.504"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:43.520" level="INFO">${header1} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.520"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:43.520" level="INFO">${header1} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.520" endtime="20230827 14:49:43.520"/>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<msg timestamp="20230827 14:49:43.520" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230827 14:49:43.904" level="INFO">PUT Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '184'} 
+ body={"firstname": "James", "lastname": "Brown", "totalprice": 111, "depositpaid": true, "bookingdates": {"checkin": "2018-01-01", "checkout": "2019-01-01"}, "additionalneeds": "Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:43.904" level="INFO">PUT Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=403, reason=Forbidden 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'Etag': 'W/"9-PatfYBLj4Um1qTm5zrukoLhNyPU"', 'Date': 'Sun, 27 Aug 2023 09:19:43 GMT', 'Via': '1.1 vegur'} 
+ body=Forbidden 
+ </msg>
+<msg timestamp="20230827 14:49:43.904" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:43.520" endtime="20230827 14:49:43.904"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:43.917" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:43.917" endtime="20230827 14:49:43.917"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:43.917"/>
+</kw>
+<kw name="THEN Validate update booking response status code as 403" library="Booker_SD">
+<kw name="System sets Put Request for Update Booking without token" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:43.919" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:43.919" endtime="20230827 14:49:43.920"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:43.920" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:43.920" endtime="20230827 14:49:43.920"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${update_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:43.920" level="INFO">${body} = {'firstname': 'James', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.920" endtime="20230827 14:49:43.920"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:43.920" level="INFO">${header1} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.920" endtime="20230827 14:49:43.920"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:43.920" level="INFO">${header1} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:43.920" endtime="20230827 14:49:43.920"/>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<msg timestamp="20230827 14:49:43.920" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230827 14:49:44.330" level="INFO">PUT Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '184'} 
+ body={"firstname": "James", "lastname": "Brown", "totalprice": 111, "depositpaid": true, "bookingdates": {"checkin": "2018-01-01", "checkout": "2019-01-01"}, "additionalneeds": "Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:44.330" level="INFO">PUT Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=403, reason=Forbidden 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'Etag': 'W/"9-PatfYBLj4Um1qTm5zrukoLhNyPU"', 'Date': 'Sun, 27 Aug 2023 09:19:44 GMT', 'Via': '1.1 vegur'} 
+ body=Forbidden 
+ </msg>
+<msg timestamp="20230827 14:49:44.330" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:43.920" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:44.330" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:43.917" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:44.330" level="INFO">${content} = 403</msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${content}</arg>
+<arg>${forbidden}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:43.917" endtime="20230827 14:49:44.330"/>
+</kw>
+<tag>updatebookingwithouttoken</tag>
+<status status="PASS" starttime="20230827 14:49:43.504" endtime="20230827 14:49:44.330"/>
+</test>
+<test id="s1-t8" name="TC_08 Partial Update Booking With token" line="49">
+<kw name="GIVEN SYSTEM SET HEADER DETAILS" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:44.330" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:44.330" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="WHEN System sets Token in Header and Sends PATCH Request for partial Update Booking" library="Booker_SD">
+<kw name="System sets token for requests" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:44.330" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${token_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:44.330" level="INFO">${endpoint} = /auth</msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${1}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:44.330" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:44.330" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.330"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${1}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230827 14:49:44.330" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:44.727" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body={"username": "admin", "password": "password123"} 
+ </msg>
+<msg timestamp="20230827 14:49:44.727" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-oJGLyttpNm1BmjydqiRv74r+hbA"', 'Date': 'Sun, 27 Aug 2023 09:19:44 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"a5d6bfc5b561797"} 
+ </msg>
+<msg timestamp="20230827 14:49:44.727" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.727"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:44.727" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:44.727" endtime="20230827 14:49:44.727"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${response_text}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:44.738" level="INFO">${response_text} = {"token":"a5d6bfc5b561797"}</msg>
+<status status="PASS" starttime="20230827 14:49:44.727" endtime="20230827 14:49:44.738"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${token}</var>
+<arg>json.loads('''${response_text}''')['token']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230827 14:49:44.738" level="INFO">${token} = a5d6bfc5b561797</msg>
+<status status="PASS" starttime="20230827 14:49:44.738" endtime="20230827 14:49:44.738"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:44.740" level="INFO">${token} = a5d6bfc5b561797</msg>
+<status status="PASS" starttime="20230827 14:49:44.738" endtime="20230827 14:49:44.740"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:44.740"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:44.740" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:44.740" endtime="20230827 14:49:44.740"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:44.740" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:44.740" endtime="20230827 14:49:44.741"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${partial_update_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:44.741" level="INFO">${body} = {'firstname': 'Mary', 'lastname': 'Jackson', 'totalprice': 1000}</msg>
+<status status="PASS" starttime="20230827 14:49:44.741" endtime="20230827 14:49:44.741"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<arg>cookie=token=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:44.741" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=a5d6bfc5b561797'}</msg>
+<status status="PASS" starttime="20230827 14:49:44.741" endtime="20230827 14:49:44.741"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:44.741" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=a5d6bfc5b561797'}</msg>
+<status status="PASS" starttime="20230827 14:49:44.741" endtime="20230827 14:49:44.741"/>
+</kw>
+<kw name="Patch Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `PATCH On Session` instead.</doc>
+<msg timestamp="20230827 14:49:44.741" level="WARN">Keyword 'RequestsLibrary.Patch Request' is deprecated. Please use `PATCH On Session` instead.</msg>
+<msg timestamp="20230827 14:49:45.193" level="INFO">PATCH Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'cookie': 'token=a5d6bfc5b561797', 'Content-Length': '64'} 
+ body={"firstname": "Mary", "lastname": "Jackson", "totalprice": 1000} 
+ </msg>
+<msg timestamp="20230827 14:49:45.193" level="INFO">PATCH Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '172', 'Etag': 'W/"ac-l2dM95evcbhJ4LV5ezALhBBtDzo"', 'Date': 'Sun, 27 Aug 2023 09:19:45 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Mary","lastname":"Jackson","totalprice":1000,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:45.193" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:44.741" endtime="20230827 14:49:45.193"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:45.193" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:45.193"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:45.193"/>
+</kw>
+<kw name="THEN Validate partial update booking contains totalprice as updated" library="Booker_SD">
+<kw name="System sets Token in Header and Sends PATCH Request for partial Update Booking" library="Booker_SD">
+<kw name="System sets token for requests" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:45.193" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:45.193"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${token_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:45.193" level="INFO">${endpoint} = /auth</msg>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:45.193"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${1}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:45.193" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:45.193"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:45.193" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:45.193"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${1}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230827 14:49:45.193" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:45.631" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body={"username": "admin", "password": "password123"} 
+ </msg>
+<msg timestamp="20230827 14:49:45.631" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-QtgBu5SIhZC7RWe8Ex/IMsysKQs"', 'Date': 'Sun, 27 Aug 2023 09:19:45 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"0556802a674f4b0"} 
+ </msg>
+<msg timestamp="20230827 14:49:45.631" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:45.631"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:45.631" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:45.631" endtime="20230827 14:49:45.631"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${response_text}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:45.631" level="INFO">${response_text} = {"token":"0556802a674f4b0"}</msg>
+<status status="PASS" starttime="20230827 14:49:45.631" endtime="20230827 14:49:45.631"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${token}</var>
+<arg>json.loads('''${response_text}''')['token']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230827 14:49:45.631" level="INFO">${token} = 0556802a674f4b0</msg>
+<status status="PASS" starttime="20230827 14:49:45.631" endtime="20230827 14:49:45.631"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:45.631" level="INFO">${token} = 0556802a674f4b0</msg>
+<status status="PASS" starttime="20230827 14:49:45.631" endtime="20230827 14:49:45.631"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:45.631"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:45.631" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:45.631" endtime="20230827 14:49:45.631"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:45.631" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:45.631" endtime="20230827 14:49:45.631"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${partial_update_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:45.631" level="INFO">${body} = {'firstname': 'Mary', 'lastname': 'Jackson', 'totalprice': 1000}</msg>
+<status status="PASS" starttime="20230827 14:49:45.631" endtime="20230827 14:49:45.646"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<arg>cookie=token=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:45.646" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=0556802a674f4b0'}</msg>
+<status status="PASS" starttime="20230827 14:49:45.646" endtime="20230827 14:49:45.646"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:45.646" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=0556802a674f4b0'}</msg>
+<status status="PASS" starttime="20230827 14:49:45.646" endtime="20230827 14:49:45.646"/>
+</kw>
+<kw name="Patch Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `PATCH On Session` instead.</doc>
+<msg timestamp="20230827 14:49:45.646" level="WARN">Keyword 'RequestsLibrary.Patch Request' is deprecated. Please use `PATCH On Session` instead.</msg>
+<msg timestamp="20230827 14:49:46.060" level="INFO">PATCH Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'cookie': 'token=0556802a674f4b0', 'Content-Length': '64'} 
+ body={"firstname": "Mary", "lastname": "Jackson", "totalprice": 1000} 
+ </msg>
+<msg timestamp="20230827 14:49:46.060" level="INFO">PATCH Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '172', 'Etag': 'W/"ac-l2dM95evcbhJ4LV5ezALhBBtDzo"', 'Date': 'Sun, 27 Aug 2023 09:19:45 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Mary","lastname":"Jackson","totalprice":1000,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"} 
+ </msg>
+<msg timestamp="20230827 14:49:46.060" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:45.646" endtime="20230827 14:49:46.060"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:46.060" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:46.060" endtime="20230827 14:49:46.060"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:46.060"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${response.text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:46.060" level="INFO">${content} = {"firstname":"Mary","lastname":"Jackson","totalprice":1000,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"}</msg>
+<status status="PASS" starttime="20230827 14:49:46.060" endtime="20230827 14:49:46.060"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${content}</arg>
+<arg>1000</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230827 14:49:46.060" endtime="20230827 14:49:46.060"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:45.193" endtime="20230827 14:49:46.060"/>
+</kw>
+<tag>partialupdatebookingtoken</tag>
+<status status="PASS" starttime="20230827 14:49:44.330" endtime="20230827 14:49:46.060"/>
+</test>
+<test id="s1-t9" name="TC_09 Partial Update Booking Without token" line="55">
+<kw name="GIVEN SYSTEM SET HEADER DETAILS" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:46.060" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.060" endtime="20230827 14:49:46.060"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:46.060" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.060" endtime="20230827 14:49:46.060"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:46.060" endtime="20230827 14:49:46.060"/>
+</kw>
+<kw name="WHEN System sets PATCH Request for partial Update Booking without token" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:46.074" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:46.074" endtime="20230827 14:49:46.074"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:46.074" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:46.074" endtime="20230827 14:49:46.074"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${partial_update_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:46.074" level="INFO">${body} = {'firstname': 'Mary', 'lastname': 'Jackson', 'totalprice': 1000}</msg>
+<status status="PASS" starttime="20230827 14:49:46.074" endtime="20230827 14:49:46.074"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:46.074" level="INFO">${header1} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.074" endtime="20230827 14:49:46.074"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:46.074" level="INFO">${header1} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.074" endtime="20230827 14:49:46.074"/>
+</kw>
+<kw name="Patch Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `PATCH On Session` instead.</doc>
+<msg timestamp="20230827 14:49:46.074" level="WARN">Keyword 'RequestsLibrary.Patch Request' is deprecated. Please use `PATCH On Session` instead.</msg>
+<msg timestamp="20230827 14:49:46.472" level="INFO">PATCH Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '64'} 
+ body={"firstname": "Mary", "lastname": "Jackson", "totalprice": 1000} 
+ </msg>
+<msg timestamp="20230827 14:49:46.472" level="INFO">PATCH Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=403, reason=Forbidden 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'Etag': 'W/"9-PatfYBLj4Um1qTm5zrukoLhNyPU"', 'Date': 'Sun, 27 Aug 2023 09:19:46 GMT', 'Via': '1.1 vegur'} 
+ body=Forbidden 
+ </msg>
+<msg timestamp="20230827 14:49:46.472" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:46.074" endtime="20230827 14:49:46.472"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:46.472" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.472"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:46.074" endtime="20230827 14:49:46.472"/>
+</kw>
+<kw name="THEN Validate partial update booking response status code as 403" library="Booker_SD">
+<kw name="System sets PATCH Request for partial Update Booking without token" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:46.472" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.472"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${single_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:46.472" level="INFO">${endpoint} = /booking/33</msg>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.472"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${body}</var>
+<arg>${partial_update_booking_data}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:46.472" level="INFO">${body} = {'firstname': 'Mary', 'lastname': 'Jackson', 'totalprice': 1000}</msg>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.472"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:46.472" level="INFO">${header1} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.472"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:46.472" level="INFO">${header1} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.472"/>
+</kw>
+<kw name="Patch Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `PATCH On Session` instead.</doc>
+<msg timestamp="20230827 14:49:46.472" level="WARN">Keyword 'RequestsLibrary.Patch Request' is deprecated. Please use `PATCH On Session` instead.</msg>
+<msg timestamp="20230827 14:49:46.934" level="INFO">PATCH Request : url=https://restful-booker.herokuapp.com/booking/33 
+ path_url=/booking/33 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '64'} 
+ body={"firstname": "Mary", "lastname": "Jackson", "totalprice": 1000} 
+ </msg>
+<msg timestamp="20230827 14:49:46.934" level="INFO">PATCH Response : url=https://restful-booker.herokuapp.com/booking/33 
+ status=403, reason=Forbidden 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'Etag': 'W/"9-PatfYBLj4Um1qTm5zrukoLhNyPU"', 'Date': 'Sun, 27 Aug 2023 09:19:46 GMT', 'Via': '1.1 vegur'} 
+ body=Forbidden 
+ </msg>
+<msg timestamp="20230827 14:49:46.934" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.934"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:46.934" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:46.934" endtime="20230827 14:49:46.934"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.934"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230827 14:49:46.934" level="INFO">${content} = 403</msg>
+<status status="PASS" starttime="20230827 14:49:46.934" endtime="20230827 14:49:46.934"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${content}</arg>
+<arg>${forbidden}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230827 14:49:46.934" endtime="20230827 14:49:46.934"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:46.472" endtime="20230827 14:49:46.934"/>
+</kw>
+<tag>partialupdatebookingwithouttoken</tag>
+<status status="PASS" starttime="20230827 14:49:46.060" endtime="20230827 14:49:46.934"/>
+</test>
+<test id="s1-t10" name="TC_10 DELETE BOOKING WITH TOKEN" line="61">
+<kw name="GIVEN SYSTEM SET HEADER DETAILS" library="Booker_SD">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${header}</var>
+<arg>${header2}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230827 14:49:46.940" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.940" endtime="20230827 14:49:46.940"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:46.940" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.940" endtime="20230827 14:49:46.940"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:46.940" endtime="20230827 14:49:46.940"/>
+</kw>
+<kw name="WHEN System sets Token in Header and Sends DELETE Request for Deleting Booking" library="Booker_SD">
+<kw name="System sets token for requests" library="Booker_SD">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:46.940" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:46.940" endtime="20230827 14:49:46.940"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${token_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:46.940" level="INFO">${endpoint} = /auth</msg>
+<status status="PASS" starttime="20230827 14:49:46.940" endtime="20230827 14:49:46.940"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${1}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:46.947" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.947" endtime="20230827 14:49:46.947"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:46.948" level="INFO">${1} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230827 14:49:46.947" endtime="20230827 14:49:46.948"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>data=${1}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230827 14:49:46.948" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:47.390" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body={"username": "admin", "password": "password123"} 
+ </msg>
+<msg timestamp="20230827 14:49:47.390" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-X5RmkkkuQWAWnuyDm67xUlUdk7g"', 'Date': 'Sun, 27 Aug 2023 09:19:47 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"1806143454421a0"} 
+ </msg>
+<msg timestamp="20230827 14:49:47.390" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:46.948" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:47.390" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${response_text}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:47.390" level="INFO">${response_text} = {"token":"1806143454421a0"}</msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${token}</var>
+<arg>json.loads('''${response_text}''')['token']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230827 14:49:47.390" level="INFO">${token} = 1806143454421a0</msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:47.390" level="INFO">${token} = 1806143454421a0</msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.390"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:46.940" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>session</arg>
+<arg>${Restfull_Booking_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230827 14:49:47.390" level="INFO">Creating Session using : alias=session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>${delete_booking_id_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230827 14:49:47.390" level="INFO">${endpoint} = /booking/2661</msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header1}</var>
+<arg>Content-Type=application/json</arg>
+<arg>cookie=token=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230827 14:49:47.390" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=1806143454421a0'}</msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${header1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:47.390" level="INFO">${header1} = {'Content-Type': 'application/json', 'cookie': 'token=1806143454421a0'}</msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.390"/>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>session</arg>
+<arg>${endpoint}</arg>
+<arg>headers=${header1}</arg>
+<doc>*DEPRECATED* Please use `DELETE On Session` instead.</doc>
+<msg timestamp="20230827 14:49:47.390" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg timestamp="20230827 14:49:47.801" level="INFO">DELETE Request : url=https://restful-booker.herokuapp.com/booking/2661 
+ path_url=/booking/2661 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'cookie': 'token=1806143454421a0', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20230827 14:49:47.801" level="INFO">DELETE Response : url=https://restful-booker.herokuapp.com/booking/2661 
+ status=201, reason=Created 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '7', 'Etag': 'W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"', 'Date': 'Sun, 27 Aug 2023 09:19:47 GMT', 'Via': '1.1 vegur'} 
+ body=Created 
+ </msg>
+<msg timestamp="20230827 14:49:47.801" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:47.390" endtime="20230827 14:49:47.801"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230827 14:49:47.801" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230827 14:49:47.801" endtime="20230827 14:49:47.801"/>
+</kw>
+<status status="PASS" starttime="20230827 14:49:46.940" endtime="20230827 14:49:47.801"/>
+</kw>
+<tag>deletebooking</tag>
+<status status="PASS" starttime="20230827 14:49:46.940" endtime="20230827 14:49:47.801"/>
+</test>
+<status status="FAIL" starttime="20230827 14:49:35.089" endtime="20230827 14:49:47.801"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">createbooking</stat>
+<stat pass="1" fail="0" skip="0">deletebooking</stat>
+<stat pass="1" fail="0" skip="0">GetBookingIds</stat>
+<stat pass="1" fail="0" skip="0">GetSingleBookingId</stat>
+<stat pass="0" fail="1" skip="0">GetSingleBookingIdWrong</stat>
+<stat pass="1" fail="0" skip="0">partialupdatebookingtoken</stat>
+<stat pass="1" fail="0" skip="0">partialupdatebookingwithouttoken</stat>
+<stat pass="1" fail="0" skip="0">token</stat>
+<stat pass="1" fail="0" skip="0">updatebooking</stat>
+<stat pass="1" fail="0" skip="0">updatebookingwithouttoken</stat>
+</tag>
+<suite>
+<stat pass="9" fail="1" skip="0" id="s1" name="Booker">Booker</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230827 14:49:35.141" level="ERROR">Error in file 'D:\SSP Project Training\Robot training\Robot Training Repo\python_robot_training\Activity11\RestfulActivity11\TestCases\Booker_SD.robot' on line 6: Importing library 'JSON' failed: ModuleNotFoundError: No module named 'JSON'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\SSP Project Training\Robot training\Robot Training Repo\python_robot_training\Activity11\RestfulActivity11
+  C:\Users\piyush_zope\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\piyush_zope\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\piyush_zope\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\piyush_zope\AppData\Local\Programs\Python\Python311
+  D:\SSP Project Training\Robot training\Robot Training Repo\python_robot_training\Activity11\RestfulActivity11
+  D:\SSP Project Training\Robot training\Robot Training Repo\python_robot_training\Activity11\RestfulActivity11\Lib\site-packages</msg>
+<msg timestamp="20230827 14:49:40.807" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:41.192" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:41.575" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:41.943" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:42.353" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230827 14:49:42.713" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:43.093" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230827 14:49:43.520" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230827 14:49:43.920" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230827 14:49:44.330" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:44.741" level="WARN">Keyword 'RequestsLibrary.Patch Request' is deprecated. Please use `PATCH On Session` instead.</msg>
+<msg timestamp="20230827 14:49:45.193" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:45.646" level="WARN">Keyword 'RequestsLibrary.Patch Request' is deprecated. Please use `PATCH On Session` instead.</msg>
+<msg timestamp="20230827 14:49:46.074" level="WARN">Keyword 'RequestsLibrary.Patch Request' is deprecated. Please use `PATCH On Session` instead.</msg>
+<msg timestamp="20230827 14:49:46.472" level="WARN">Keyword 'RequestsLibrary.Patch Request' is deprecated. Please use `PATCH On Session` instead.</msg>
+<msg timestamp="20230827 14:49:46.948" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230827 14:49:47.390" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+</errors>
+</robot>
